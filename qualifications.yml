@@ -1,0 +1,21 @@
+# A fully-trained programmer should
+---
+title: 'Have demonstrated understanding of Ruby core methods / Rails object extensions'
+description: >
+subtasks:
+  - 'Ruby object types'
+  - 'Methods and functionality brought by Rails (try, 1.week, etc.)'
+---
+title: 'Have demonstrated familiarity with MVC architecture and the Rails asset pipeline'
+description: >
+subtasks:
+  - 'When to place logic in controller / model'
+  - 'What not to put in a view'
+  - 'Partials'
+  - 'Working securely with params (guarding at the borders)'
+---
+title: 'Routing, especially member vs. collection routes'
+description: >
+subtasks:
+  - 'Default resource CRUD routes'
+  - 'Difference between GET and POST / links and buttons'
