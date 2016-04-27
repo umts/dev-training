@@ -24,9 +24,9 @@ module UMTSTraining
 
     private
 
-    def format_body(desc, checklist)
-      if checklist
-        desc + "\n\n" + format_checklist(checklist)
+    def format_body(desc, subtasks)
+      if subtasks
+        desc + "\n\n" + format_checklist(subtasks)
       else
         desc
       end
