@@ -13,8 +13,8 @@ milestone = UMTSTraining::Milestone.new local_repo,
                                         client,
                                         'qualifications.yml'
 
-client.add_collaborators! %w(werebus sherson dfaulken)
 cli.message 'add_collabs'
+client.add_collaborators! UMTSTraining.collaborators
 
 cli.message 'create_issues'
 milestone.create!
