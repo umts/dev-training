@@ -9,7 +9,7 @@ module UMTSTraining
         password: password
       )
 
-      @auth = make_auth(temp_client)
+      @auth = make_auth(temp_client, cli)
       @client = Octokit::Client.new(access_token: auth.token)
       @repo = local_repo.github_name
     end
@@ -22,19 +22,23 @@ module UMTSTraining
 
     private
 
+    def make_auth(temp_client, cli, tfa = nil)
+      temp_client.create_authorization(auth_settings(tfa))
+    rescue Octokit::Unauthorized
+      cli.say cli.color 'Password Incorrect', :red
+      temp_client.password = cli.pw_ask 'Enter your GitHub password: '
+      retry
+    rescue Octokit::OneTimePasswordRequired
+      tfa = cli.pw_ask 'Enter 2FA code: '
+      make_auth(temp_client, cli, tfa)
+    end
+
     def auth_settings(tfa = nil)
       {}.tap do |h|
         h[:scopes] = %w(user repo)
         h[:note] = 'UMTS Programmer Training'
-        h[:headers] = { headers: { 'X-Github-OTP' => tfa } } if tfa
+        h[:headers] = { 'X-Github-OTP' => tfa } if tfa
       end
-    end
-
-    def make_auth(temp_client)
-      temp_client.create_authorization(auth_settings)
-    rescue Octokit::OneTimePasswordRequired
-      tfa = cli.pw_ask 'Enter 2FA code: '
-      temp_client.create_authorization(auth_settings(tfa))
     end
   end
 end
