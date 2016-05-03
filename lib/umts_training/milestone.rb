@@ -13,7 +13,7 @@ module UMTSTraining
     end
 
     def create_issues!
-      ::YAML.load_stream(::File.open @yaml) do |document|
+      YAML.load_stream(@yaml) do |document|
         @client.create_issue @repo,
                              document.fetch('title'),
                              format_body(document['description'],

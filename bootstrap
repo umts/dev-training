@@ -4,14 +4,17 @@ this_dir = File.dirname(__FILE__)
 $LOAD_PATH.unshift File.join(this_dir, 'lib')
 require 'umts_training'
 
+messages_file = File.open('messages.yml')
+qualifications_file = File.open('qualifications.yml')
+
 local_repo = UMTSTraining::LocalRepo.new this_dir
-cli = UMTSTraining::CLI.new 'messages.yml'
+cli = UMTSTraining::CLI.new messages_file
 
 cli.message 'create_client'
 client = UMTSTraining::Client.new local_repo, cli
 milestone = UMTSTraining::Milestone.new local_repo,
                                         client,
-                                        'qualifications.yml'
+                                        qualifications_file
 
 cli.message 'add_collabs'
 client.add_collaborators! UMTSTraining.collaborators
@@ -21,3 +24,6 @@ milestone.create!
 milestone.create_issues!
 
 cli.message 'done'
+
+messages_file.close
+qualifications_file.close

@@ -1,5 +1,5 @@
 require 'bundler'
-Bundler.require
+Bundler.require(:default)
 
 require 'umts_training/cli'
 require 'umts_training/client'
