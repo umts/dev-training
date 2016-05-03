@@ -1,3 +1,8 @@
+*If you're a non-trainee looking for developer or configuration information,
+check out the [DEV-README][0].*
+
+---
+
 Hello there. This repository will help us track your progress through our
 training progress.  Here's how to get started:
 
@@ -35,8 +40,9 @@ $ ./bootsrap
 
 As you work on other UMTS software projects, you can flag your work
 as addressing a particular training task by referring to it as e.g.
-`youruser/dev-training#6`
+`youruser/dev-training-priv#6`
 
+[0]: https://github.com/umts/dev-training/blob/master/DEV-README.md
 [1]: https://github.com/umts/dev-training-priv
 [2]: https://github.com/umts/dev-training/raw/master/private.png
 [3]: https://github.com/umts/dev-training/raw/master/clipboard.png
