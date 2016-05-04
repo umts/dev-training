@@ -1,3 +1,8 @@
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+end
+
 this_dir = File.dirname(__FILE__)
 $LOAD_PATH.unshift File.expand_path(File.join(this_dir, '..', 'lib'))
 require 'umts_training'
