@@ -26,7 +26,7 @@ Next you'll need a few Ruby gems in order to interact with GitHub. We'll use
 Bundler to install them.
 
 ```bash
-$ bundle --without=test
+$ bundle --without development test
 ```
 
 Finally, we'll run the bootstrap script that will create your Graduation
