@@ -5,7 +5,9 @@ RSpec.describe UMTSTraining::Milestone do
     instance_double(Octokit::Client)
   end
   let :milestone do
-    repo = OpenStruct.new(github_name: 'judy/harfbang')
+    # Like a UMTSTraining::LocalRepo :
+    repo = OpenStruct.new(github_name: 'judy/harfbang') 
+    # Like a UMTSTraining::Client :
     uclient = OpenStruct.new(client: client)
     yaml = <<-END.gsub(/^\s{4}/, '')
     ---
