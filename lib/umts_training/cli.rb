@@ -1,7 +1,7 @@
 module UMTSTraining
   class CLI < ::HighLine
-    def initialize(messages_file)
-      super($stdin, $stdout, 80)
+    def initialize(messages_file, input: $stdin, output: $stdout)
+      super(input, output, 80)
       @message_catalog = YAML.load(messages_file)
     end
 
