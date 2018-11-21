@@ -12,11 +12,8 @@ messages_file = config_dir.join('messages.yml').open
 qualifications_file = config_dir.join('qualifications.yml').open
 colaborators_file = config_dir.join('colaborators.yml').open
 at_exit do
-  [messages_file, qualifications_file, colaborators_file].each do |file|
-    file.close
-  end
+  [messages_file, qualifications_file, colaborators_file].each(&:close)
 end
-
 
 local_repo = UMTSTraining::LocalRepo.new Pathname(__dir__)
 cli = UMTSTraining::CLI.new messages_file

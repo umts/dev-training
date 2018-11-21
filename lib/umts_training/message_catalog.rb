@@ -9,9 +9,7 @@ module UMTSTraining
     include Hashie::Extensions::MethodAccess
 
     def initialize(catalog = {}, default = nil, &block)
-      if catalog.respond_to? :read
-        catalog = YAML.safe_load(catalog) || {}
-      end
+      catalog = YAML.safe_load(catalog) || {} if catalog.respond_to? :read
       super(catalog, default, &block)
     end
   end

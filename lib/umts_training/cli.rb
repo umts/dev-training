@@ -25,5 +25,9 @@ module UMTSTraining
     def pw_ask(prompt)
       ask(prompt) { |q| q.echo = '*' }
     end
+
+    def respond_to_missing?(method_name, include_private = false)
+      @message_catalog.respond_to?(method_name) || super
+    end
   end
 end
