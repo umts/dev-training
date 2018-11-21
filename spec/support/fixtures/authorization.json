@@ -1,6 +1,0 @@
-{ "id": 1
-, "url": "https://api.github.com/authorizations/1"
-, "scopes": [ "user", "repo" ]
-, "token": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
-, "token_last_eight": "deadbeef"
-}
