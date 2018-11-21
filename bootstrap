@@ -26,6 +26,7 @@ cli.message :add_collabs
 client.add_collaborators! YAML.safe_load colaborators_file
 
 cli.message :create_issues
+client.enable_issues!
 milestone.create!
 milestone.create_issues!
 

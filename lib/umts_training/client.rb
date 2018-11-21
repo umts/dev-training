@@ -24,6 +24,10 @@ module UMTSTraining
       end
     end
 
+    def enable_issues!
+      @client.edit_repository(@repo, has_issues: true)
+    end
+
     private
 
     def make_auth(temp_client, cli, tfa = nil)
