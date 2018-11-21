@@ -1,10 +1,11 @@
+require 'pathname'
 require 'simplecov'
 SimpleCov.start do
   add_filter '/spec/'
 end
 
-this_dir = File.dirname(__FILE__)
-$LOAD_PATH.unshift File.expand_path(File.join(this_dir, '..', 'lib'))
+lib_dir = Pathname(__dir__).join('..', 'lib').expand_path
+$LOAD_PATH.unshift lib_dir
 require 'umts_training'
 
 RSpec.configure do |config|
