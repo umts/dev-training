@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'highline'
+
 module UMTSTraining
   class CLI < ::HighLine
     def initialize(messages_file, input: $stdin, output: $stdout)

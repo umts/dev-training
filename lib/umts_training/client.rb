@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'octokit'
+
 module UMTSTraining
   class Client
     attr_reader :auth, :client

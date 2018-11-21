@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'git'
+
 module UMTSTraining
   class LocalRepo
     attr_reader :user, :name
