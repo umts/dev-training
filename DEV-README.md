@@ -23,8 +23,8 @@ subtasks:
 
 Collaborators
 -------------
-The list of users that will be added as collaborators is defined in a method
-in `lib/umts_training.rb`. It isn't possible, unfortunately, to use the API to
+The list of users that will be added as collaborators is defined in the
+`colaborators.yml` file. It isn't possible, unfortunately, to use the API to
 get those users, since listing team membership isn't a thing a regular
 organization member can do.
 
