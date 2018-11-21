@@ -15,18 +15,18 @@ module UMTSTraining
 
       @auth = make_auth(temp_client, cli)
       @client = Octokit::Client.new(access_token: auth.token)
-      @repo = local_repo.github_name
+      @repo = local_repo
     end
 
     def add_collaborators!(collaborators)
       collaborators.each do |collaborator|
-        next if collaborator == local_repo.user
-        @client.add_collaborator(@repo, collaborator)
+        next if collaborator == @repo.user
+        @client.add_collaborator(@repo.github_name, collaborator)
       end
     end
 
     def enable_issues!
-      @client.edit_repository(@repo, has_issues: true)
+      @client.edit_repository(@repo.github_name, has_issues: true)
     end
 
     private
