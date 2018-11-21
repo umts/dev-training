@@ -6,7 +6,7 @@ before graduating to full-fledged developer.
 Configuring Training Issues
 ---------------------------
 The issues that will be created to track a trainee's progress come from
-`qualifications.yml`. Each one is a YAML "document" and looks like this
+`config/qualifications.yml`. Each one is a YAML "document" and looks like this
 
 ```yaml
 ---
@@ -24,15 +24,15 @@ subtasks:
 Collaborators
 -------------
 The list of users that will be added as collaborators is defined in the
-`colaborators.yml` file. It isn't possible, unfortunately, to use the API to
-get those users, since listing team membership isn't a thing a regular
+`config/colaborators.yml` file. It isn't possible, unfortunately, to use the
+API to get those users, since listing team membership isn't a thing a regular
 organization member can do.
 
 Configuring messages used by `bootstrap`
 -------------------------------------
 The texts of messages that the CLI displays while it's running are in
-`messages.yml`. Each message is a YAML "mapping". The value of the message
-will be passed to [`Highline#say`][2] so you can use ERb tags and the
+`config/messages.yml`. Each message is a YAML "mapping". The value of the
+message will be passed to [`Highline#say`][2] so you can use ERB tags and the
 various Highline helper methods (like `color`).
 
 Updating the private copy

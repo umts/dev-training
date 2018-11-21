@@ -3,13 +3,14 @@
 
 require 'pathname'
 
-lib_dir = Pathname(__dir__).join('..', 'lib').expand_path
+lib_dir = Pathname(__dir__).join('lib').expand_path
+config_dir = Pathname(__dir__).join('config').expand_path
+messages_file = config_dir.join('messages.yml').open
+qualifications_file = config_dir.join('qualifications.yml').open
+colaborators_file = config_dir.join('colaborators.yml').open
+
 $LOAD_PATH.unshift lib_dir
 require 'umts_training'
-
-messages_file = File.open('messages.yml')
-qualifications_file = File.open('qualifications.yml')
-colaborators_file = File.open('colaborators.yml')
 
 local_repo = UMTSTraining::LocalRepo.new Pathname(__dir__)
 cli = UMTSTraining::CLI.new messages_file
