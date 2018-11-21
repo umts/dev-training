@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module UMTSTraining
   class Client
     attr_reader :auth, :client
@@ -35,7 +37,7 @@ module UMTSTraining
 
     def auth_settings(tfa = nil)
       {}.tap do |h|
-        h[:scopes] = %w(user repo)
+        h[:scopes] = %w[user repo]
         h[:note] = 'UMTS Programmer Training'
         h[:headers] = { 'X-Github-OTP' => tfa } if tfa
       end

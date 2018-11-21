@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 RSpec.describe UMTSTraining::CLI do
   let :cli do
-    messages = StringIO.new(<<-END)
-    valid_message: >
-      ABCD
-    END
+    messages = StringIO.new(<<~YAML)
+      valid_message: >
+        ABCD
+    YAML
     UMTSTraining::CLI.new(messages)
   end
 

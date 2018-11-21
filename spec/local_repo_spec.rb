@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ostruct'
 RSpec.describe UMTSTraining::LocalRepo do
   let :fake_repo do

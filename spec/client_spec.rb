@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe UMTSTraining::Client do
   describe '#initialize' do
     it 'makes a temporary client'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ostruct'
 
 RSpec.describe UMTSTraining::Milestone do
@@ -6,23 +8,23 @@ RSpec.describe UMTSTraining::Milestone do
   end
   let :milestone do
     # Like a UMTSTraining::LocalRepo :
-    repo = OpenStruct.new(github_name: 'judy/harfbang') 
+    repo = OpenStruct.new(github_name: 'judy/harfbang')
     # Like a UMTSTraining::Client :
     uclient = OpenStruct.new(client: client)
-    yaml = <<-END.gsub(/^\s{4}/, '')
-    ---
-    title: TEST-TITLE
-    description: >
-      TEST-DESCRIPTION
-    ---
-    title: WITHOUT-DESCRIPTION
-    ---
-    title: WITH-SUBTASKS
-    description: >
-    subtasks:
-      - FIRST-SUBTASK
-      - SECOND-SUBTASK
-    END
+    yaml = <<~YAML
+      ---
+      title: TEST-TITLE
+      description: >
+        TEST-DESCRIPTION
+      ---
+      title: WITHOUT-DESCRIPTION
+      ---
+      title: WITH-SUBTASKS
+      description: >
+      subtasks:
+        - FIRST-SUBTASK
+        - SECOND-SUBTASK
+    YAML
     yaml_file = StringIO.new yaml
     UMTSTraining::Milestone.new(repo, uclient, yaml_file)
   end

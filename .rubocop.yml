@@ -1,0 +1,9 @@
+AllCops:
+  Include:
+    - Gemfile
+    - bootstrap
+    - '**/*.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
