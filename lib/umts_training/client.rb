@@ -20,6 +20,7 @@ module UMTSTraining
 
     def add_collaborators!(collaborators)
       collaborators.each do |collaborator|
+        next if collaborator == local_repo.user
         @client.add_collaborator(@repo, collaborator)
       end
     end
