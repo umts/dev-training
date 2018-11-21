@@ -4,33 +4,32 @@
 require 'pathname'
 
 lib_dir = Pathname(__dir__).join('lib').expand_path
+$LOAD_PATH.unshift lib_dir
+require 'umts_training'
+
 config_dir = Pathname(__dir__).join('config').expand_path
 messages_file = config_dir.join('messages.yml').open
 qualifications_file = config_dir.join('qualifications.yml').open
 colaborators_file = config_dir.join('colaborators.yml').open
+at_exit do
+  [messages_file, qualifications_file, colaborators_file].each do |file|
+    file.close
+  end
+end
 
-$LOAD_PATH.unshift lib_dir
-require 'umts_training'
 
 local_repo = UMTSTraining::LocalRepo.new Pathname(__dir__)
 cli = UMTSTraining::CLI.new messages_file
 
 cli.message :create_client
-client = UMTSTraining::Client.new local_repo, cli
-milestone = UMTSTraining::Milestone.new local_repo,
-                                        client,
-                                        qualifications_file
+client = UMTSTraining::Client.new(local_repo, cli)
+milestone = UMTSTraining::Milestone.new(local_repo, client, qualifications_file)
 
 cli.message :add_collabs
-colaborators = YAML.safe_load colaborators_file
-client.add_collaborators! colaborators
+client.add_collaborators! YAML.safe_load colaborators_file
 
 cli.message :create_issues
 milestone.create!
 milestone.create_issues!
 
 cli.message :done
-
-messages_file.close
-qualifications_file.close
-colaborators_file.close
