@@ -15,11 +15,24 @@ RSpec.describe UMTSTraining::CLI do
   end
 
   describe '#message' do
-    it 'outputs a message from the catalog' do
+    it 'outputs a string-keyed message from the catalog' do
       expect { cli.message 'valid_message' }.to output("ABCD\n").to_stdout
+    end
+    it 'outputs a symbol-keyed message from the catalog' do
+      expect { cli.message :valid_message }.to output("ABCD\n").to_stdout
     end
     it 'raises an exception on an unknown message' do
       expect { cli.message 'invalid_message' }.to raise_error(KeyError)
+    end
+  end
+
+  describe '#method_missing' do
+    it 'delegates methods to the message catalog if it can' do
+      expect { cli.valid_message }.to output("ABCD\n").to_stdout
+    end
+    it 'raises a no method error if it cannot' do
+      expect { cli.invalid_message }.to raise_error(NoMethodError)
+        .with_message(/#{described_class}/)
     end
   end
 

@@ -14,21 +14,21 @@ colaborators_file = File.open('colaborators.yml')
 local_repo = UMTSTraining::LocalRepo.new Pathname(__dir__)
 cli = UMTSTraining::CLI.new messages_file
 
-cli.message 'create_client'
+cli.message :create_client
 client = UMTSTraining::Client.new local_repo, cli
 milestone = UMTSTraining::Milestone.new local_repo,
                                         client,
                                         qualifications_file
 
-cli.message 'add_collabs'
+cli.message :add_collabs
 colaborators = YAML.safe_load colaborators_file
 client.add_collaborators! colaborators
 
-cli.message 'create_issues'
+cli.message :create_issues
 milestone.create!
 milestone.create_issues!
 
-cli.message 'done'
+cli.message :done
 
 messages_file.close
 qualifications_file.close

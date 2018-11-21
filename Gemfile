@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'git'
+gem 'hashie'
 gem 'highline'
 gem 'octokit'
 
