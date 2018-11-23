@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'bundler'
 require 'irb'
 require 'irb/completion'
 require 'pathname'
+
 $dtlibdir = Pathname(__dir__).join('..', 'lib')
 $LOAD_PATH.unshift $dtlibdir.to_path
 
@@ -11,6 +13,7 @@ def reload!
   $dtlibdir.glob('**/*.rb').map do |lib|
     load lib
   end.all?
+  Bundler.require(:default, :development)
 end
 reload!
 
@@ -23,4 +26,7 @@ IRB.conf.merge!(
   PROMPT_MODE: :CLASSIC,
   RC: false
 )
+
+FancyIrb.start
+Wirb.start
 IRB::Irb.new.run(IRB.conf)

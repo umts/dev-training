@@ -14,5 +14,7 @@ group :test do
 end
 
 group :development do
+  gem 'fancy_irb'
   gem 'pry'
+  gem 'wirb'
 end
