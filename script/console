@@ -1,3 +1,26 @@
-#!/bin/bash
-script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-irb -I "$script_dir/../lib" -r "umts_training"
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'irb'
+require 'irb/completion'
+require 'pathname'
+$dtlibdir = Pathname(__dir__).join('..', 'lib')
+$LOAD_PATH.unshift $dtlibdir.to_path
+
+def reload!
+  $dtlibdir.glob('**/*.rb').map do |lib|
+    load lib
+  end.all?
+end
+reload!
+
+STDOUT.sync = true
+IRB.setup nil
+IRB.conf.merge!(
+  AUTO_INDENT: true,
+  IRB_NAME: 'dev-training',
+  IRB_PATH: '(dev-training)',
+  PROMPT_MODE: :CLASSIC,
+  RC: false
+)
+IRB::Irb.new.run(IRB.conf)

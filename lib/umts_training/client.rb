@@ -21,6 +21,7 @@ module UMTSTraining
     def add_collaborators!(collaborators)
       collaborators.each do |collaborator|
         next if collaborator == @repo.user
+
         @client.add_collaborator(@repo.github_name, collaborator)
       end
     end

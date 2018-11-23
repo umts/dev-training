@@ -2,8 +2,13 @@ AllCops:
   Include:
     - Gemfile
     - bootstrap
+    - script/console
     - '**/*.rb'
 
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
+
+Style/GlobalVars:
+  Exclude:
+    - script/console
