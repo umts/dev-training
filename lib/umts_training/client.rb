@@ -3,8 +3,14 @@
 require 'octokit'
 
 module UMTSTraining
+  ##
+  #
   class Client
-    attr_reader :auth, :client
+    # The resource for the client's
+    # [authorization](http://octokit.github.io/octokit.rb/Octokit/Client/Authorizations.html)
+    attr_reader :auth
+    # The actual OctoKit [client](http://octokit.github.io/octokit.rb/Octokit/Client.html)
+    attr_reader :client
 
     def initialize(local_repo, cli)
       password = cli.pw_ask 'Enter your GitHub pasword: '

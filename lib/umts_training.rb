@@ -8,5 +8,5 @@ require 'umts_training/client'
 require 'umts_training/local_repo'
 require 'umts_training/milestone'
 
-module UMTSTraining
+module UMTSTraining # :nodoc:
 end

@@ -1,6 +1,7 @@
 AllCops:
   Include:
     - Gemfile
+    - Rakefile
     - bootstrap
     - script/console
     - '**/*.rb'
