@@ -44,5 +44,5 @@ as addressing a particular training task by referring to it as e.g.
 
 [0]: https://umts.github.io/dev-training/index.html
 [1]: https://github.com/umts/dev-training-priv
-[2]: https://github.com/umts/dev-training/raw/master/private.png
-[3]: https://github.com/umts/dev-training/raw/master/clipboard.png
+[2]: https://raw.githubusercontent.com/umts/dev-training/master/img/private.png
+[3]: https://raw.githubusercontent.com/umts/dev-training/master/img/clipboard.png
