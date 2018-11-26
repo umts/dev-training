@@ -1,8 +1,8 @@
-Mon, 26 Nov 2018 10:58:23 -0500
+Mon, 26 Nov 2018 12:24:22 -0500
 DEV-README.md	Wed, 21 Nov 2018 13:39:41 -0500
 lib/umts_training.rb	Fri, 23 Nov 2018 14:23:14 -0500
 lib/umts_training/message_catalog.rb	Thu, 22 Nov 2018 19:50:07 -0500
 lib/umts_training/cli.rb	Fri, 23 Nov 2018 21:30:23 -0500
 lib/umts_training/local_repo.rb	Wed, 21 Nov 2018 12:29:44 -0500
-lib/umts_training/milestone.rb	Wed, 21 Nov 2018 10:23:08 -0500
-lib/umts_training/client.rb	Fri, 23 Nov 2018 22:05:42 -0500
+lib/umts_training/milestone.rb	Mon, 26 Nov 2018 12:12:29 -0500
+lib/umts_training/client.rb	Mon, 26 Nov 2018 12:24:21 -0500
