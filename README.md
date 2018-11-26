@@ -42,7 +42,7 @@ As you work on other UMTS software projects, you can flag your work
 as addressing a particular training task by referring to it as e.g.
 `youruser/dev-training-priv#6`
 
-[0]: https://umts.guthub.io/dev-training/index.html
+[0]: https://umts.github.io/dev-training/index.html
 [1]: https://github.com/umts/dev-training-priv
 [2]: https://github.com/umts/dev-training/raw/master/private.png
 [3]: https://github.com/umts/dev-training/raw/master/clipboard.png
