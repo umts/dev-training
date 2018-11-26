@@ -7,10 +7,14 @@ module UMTSTraining
     attr_reader :user, :name
 
     def initialize(directory)
-      repo = Git.open(directory)
       # git@github.com:user/repo.git  -or-
       # https://github.com/user/repo.git
-      @user, @name = repo.remote.url.split(%r{[/:.]})[-3, 2]
+      regex = %r{(?<user>[^/:]+)/(?<repo>[^/:.]+).git$}
+
+      repo = Git.open(directory)
+      match = repo.remote('origin').url.match(regex)
+      @user = match[:user]
+      @name = match[:repo]
     end
 
     def github_name
