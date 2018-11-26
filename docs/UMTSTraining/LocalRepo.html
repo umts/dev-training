@@ -88,6 +88,9 @@
 
   <section class="description">
     
+<p>Represents the git repository on disk. It uses the “origin” remote of that
+repository to figure out the username and repository name on GitHub.</p>
+
   </section>
 
   
@@ -113,7 +116,7 @@
 
         <div class="method-description">
         
-        
+        <p>The remote repository name</p>
         
         </div>
       </div>
@@ -126,7 +129,7 @@
 
         <div class="method-description">
         
-        
+        <p>The remote username</p>
         
         </div>
       </div>
@@ -154,18 +157,23 @@
 
         <div class="method-description">
           
-          
+          <p><code>directory</code> is the path to a directory that contains a git
+repository.</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/local_repo.rb, line 8</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/local_repo.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">directory</span>)
-  <span class="ruby-identifier">repo</span> = <span class="ruby-constant">Git</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">directory</span>)
   <span class="ruby-comment"># git@github.com:user/repo.git  -or-</span>
   <span class="ruby-comment"># https://github.com/user/repo.git</span>
-  <span class="ruby-ivar">@user</span>, <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">repo</span>.<span class="ruby-identifier">remote</span>.<span class="ruby-identifier">url</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r{[/:.]}</span>)[<span class="ruby-value">-3</span>, <span class="ruby-value">2</span>]
+  <span class="ruby-identifier">regex</span> = <span class="ruby-regexp">%r{(?&lt;user&gt;[^/:]+)/(?&lt;repo&gt;[^/:.]+).git$}</span>
+
+  <span class="ruby-identifier">repo</span> = <span class="ruby-constant">Git</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">directory</span>)
+  <span class="ruby-identifier">match</span> = <span class="ruby-identifier">repo</span>.<span class="ruby-identifier">remote</span>(<span class="ruby-string">&#39;origin&#39;</span>).<span class="ruby-identifier">url</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">regex</span>)
+  <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">match</span>[<span class="ruby-value">:user</span>]
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">match</span>[<span class="ruby-value">:repo</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -198,13 +206,14 @@
 
         <div class="method-description">
           
-          
+          <p>“&lt;user&gt;/&lt;name”. This is the format GitHub uses to refer to
+repositories in their API.</p>
           
           
 
           
           <div class="method-source-code" id="github_name-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/local_repo.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/local_repo.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">github_name</span>
   <span class="ruby-ivar">@user</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;/&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@name</span>
 <span class="ruby-keyword">end</span></pre>
