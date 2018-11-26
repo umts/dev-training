@@ -9,5 +9,12 @@ require 'umts_training/formatting_helpers'
 require 'umts_training/local_repo'
 require 'umts_training/milestone'
 
-module UMTSTraining # :nodoc:
+##
+# * UMTSTraining::CLI
+# * UMTSTraining::Client
+# * UMTSTraining::FormattingHelpers
+# * UMTSTraining::LocalRepo
+# * UMTSTraining::MessageCatalog
+# * UMTSTraining::Milestone
+module UMTSTraining
 end
