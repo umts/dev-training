@@ -4,6 +4,8 @@ require 'yaml'
 
 module UMTSTraining
   class Milestone
+    include UMTSTraining::FormattingHelpers
+
     def initialize(local_repo, client, yaml_file)
       @yaml = yaml_file
       @client = client.client # ugh
@@ -22,19 +24,6 @@ module UMTSTraining
                                          document['subtasks']),
                              milestone: @milestone.number
       end
-    end
-
-    private
-
-    def format_body(desc, subtasks)
-      desc += "\n\n" + format_checklist(subtasks) if subtasks
-      desc
-    end
-
-    def format_checklist(checklist)
-      checklist.map do |item|
-        "* [ ] #{item}"
-      end.join("\n")
     end
   end
 end

@@ -26,7 +26,7 @@ module UMTSTraining
     end
 
     ##
-    # "<user>/<name". This is the format GitHub uses to refer to repositories
+    # `<user>/<name>`. This is the format GitHub uses to refer to repositories
     # in their API.
     def github_name
       @user + '/' + @name
