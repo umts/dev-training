@@ -10,10 +10,12 @@ $dtlibdir = Pathname(__dir__).join('..', 'lib')
 $LOAD_PATH.unshift $dtlibdir.to_path
 
 def reload!
-  $dtlibdir.glob('**/*.rb').map do |lib|
+  loaded = $dtlibdir.glob('**/*.rb').map do |lib|
     load lib
   end.all?
+
   Bundler.require(:default, :development)
+  loaded
 end
 reload!
 
