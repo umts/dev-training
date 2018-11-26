@@ -81,6 +81,10 @@
 
   <section class="description">
     
+<p>A few helpers for formatting issue text. Available as module functions for
+convenience, but also included in <a
+href="Milestone.html">UMTSTraining::Milestone</a></p>
+
   </section>
 
   
@@ -104,7 +108,7 @@
         
         <div class="method-heading">
           <span class="method-name">format_body</span><span
-            class="method-args">(desc, subtasks)</span>
+            class="method-args">(desc, subtasks = [])</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -113,15 +117,20 @@
 
         <div class="method-description">
           
-          
+          <p>Returns <code>desc</code>, and optionally if <code>subtasks</code> is a
+non-empty `Array, the results of <a
+href="FormattingHelpers.html#method-i-format_checklist">#format_checklist</a>
+tacked on after a blank line.</p>
           
           
 
           
           <div class="method-source-code" id="format_body-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/formatting_helpers.rb, line 6</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_body</span>(<span class="ruby-identifier">desc</span>, <span class="ruby-identifier">subtasks</span>)
-  <span class="ruby-identifier">desc</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;\n\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">format_checklist</span>(<span class="ruby-identifier">subtasks</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">subtasks</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/formatting_helpers.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_body</span>(<span class="ruby-identifier">desc</span>, <span class="ruby-identifier">subtasks</span> = [])
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">subtasks</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">subtasks</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">desc</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;\n\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">format_checklist</span>(<span class="ruby-identifier">subtasks</span>)
+  <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">desc</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -147,13 +156,13 @@
 
         <div class="method-description">
           
-          
+          <p>Makes a GFM “tasklisk” with one item per item in <code>checklist</code></p>
           
           
 
           
           <div class="method-source-code" id="format_checklist-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/formatting_helpers.rb, line 11</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/formatting_helpers.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_checklist</span>(<span class="ruby-identifier">checklist</span>)
   <span class="ruby-identifier">checklist</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
     <span class="ruby-node">&quot;* [ ] #{item}&quot;</span>
