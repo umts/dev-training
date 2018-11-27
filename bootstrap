@@ -3,10 +3,13 @@
 
 require 'pathname'
 
+# Load our libraries.
 lib_dir = Pathname(__dir__).join('lib').expand_path
 $LOAD_PATH.unshift lib_dir
 require 'umts_training'
 
+# Open up all the config files we'll need. Also, make sure they get closed
+# if the script exits for any reason.
 config_dir = Pathname(__dir__).join('config').expand_path
 messages_file = config_dir.join('messages.yml').open
 qualifications_file = config_dir.join('qualifications.yml').open
@@ -15,19 +18,27 @@ at_exit do
   [messages_file, qualifications_file, colaborators_file].each(&:close)
 end
 
+# Create a LocalRepo and CLI object for interacting with the user
 local_repo = UMTSTraining::LocalRepo.new Pathname(__dir__)
 cli = UMTSTraining::CLI.new messages_file
 
+# Create the GitHub client. This is where the "personal access token" gets
+# made and is where the user provides their password, 2FA, etc.
 cli.message :create_client
 client = UMTSTraining::Client.new(local_repo, cli)
-milestone = UMTSTraining::Milestone.new(local_repo, client, qualifications_file)
 
+# Add the colaborators in the config file as colaborator's on the user's
+# repository.
 cli.message :add_collabs
 client.add_collaborators! YAML.safe_load colaborators_file
 
+# Enable issues, create a "graduation" milestone and make the issues from the
+# "qualification" file.
 cli.message :create_issues
+milestone = UMTSTraining::Milestone.new(local_repo, client, qualifications_file)
 client.enable_issues!
 milestone.create!
 milestone.create_issues!
 
+# Congratulate the user on a job well done.
 cli.message :done
