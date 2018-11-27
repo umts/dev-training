@@ -1,5 +1,9 @@
+[![Build Status][travis-badge]][travis]
+
+---
+
 This repository is used to track our programmer Trainees' progress through
-training.  It uses [Octokit][1] at the command-line to create issues
+training.  It uses [Octokit][ok] at the command-line to create issues
 for each of the tasks that we think a programmer trainee should complete
 before graduating to full-fledged developer.
 
@@ -32,7 +36,7 @@ Configuring messages used by `bootstrap`
 -------------------------------------
 The texts of messages that the CLI displays while it's running are in
 `config/messages.yml`. Each message is a YAML "mapping". The value of the
-message will be passed to [`Highline#say`][2] so you can use ERB tags and the
+message will be passed to [`Highline#say`][hl] so you can use ERB tags and the
 various Highline helper methods (like `color`).
 
 Updating the private copy
@@ -51,5 +55,7 @@ Now, you can push to it just like you would to master
 $ git push prod master
 ```
 
-[1]: https://github.com/octokit/octokit.rb
-[2]: http://www.rubydoc.info/github/JEG2/highline/master/HighLine#say-instance_method
+[ok]: https://github.com/octokit/octokit.rb
+[hl]: http://www.rubydoc.info/github/JEG2/highline/master/HighLine#say-instance_method
+[travis]: https://travis-ci.org/umts/dev-training
+[travis-badge]: https://travis-ci.org/umts/dev-training.svg?branch=master
