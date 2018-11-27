@@ -9,11 +9,11 @@ class TokenClient
     @access_token = access_token
   end
 
-  def add_collaborator(*args)
+  def add_collaborator(*_args)
     true
   end
 
-  def edit_repository(*args)
+  def edit_repository(*_args)
     true
   end
 end

@@ -58,7 +58,7 @@ RSpec.describe UMTSTraining::Client do
         .with(login: 'sharon', password: 'BAD')
         .and_return(bad_password_client)
       allow(cli).to receive(:color).with('Password Incorrect', anything)
-        .and_return(:password_incorrect)
+                                   .and_return(:password_incorrect)
       expect(cli).to receive(:say).with(:password_incorrect)
       expect(cli).to receive(:pw_ask).with(/^Reenter/).and_return('GOOD')
       allow(Octokit::Client).to receive(:new)
@@ -106,7 +106,7 @@ RSpec.describe UMTSTraining::Client do
     include_context 'valid_octokit_client'
     it 'edits the repository to have issues' do
       expect(real_client).to receive(:edit_repository)
-        .with('sharon/dev-training', {has_issues: true})
+        .with('sharon/dev-training', has_issues: true)
 
       @client.enable_issues!
     end
