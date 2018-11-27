@@ -12,6 +12,10 @@ lib_dir = Pathname(__dir__).join('..', 'lib').expand_path
 $LOAD_PATH.unshift lib_dir
 require 'umts_training'
 
+Pathname(__dir__).join('support').expand_path.glob('**/*.rb').each do |file|
+  require file
+end
+
 RSpec.configure do |config|
   config.filter_run :focus
   config.run_all_when_everything_filtered = true

@@ -57,7 +57,7 @@ module UMTSTraining
       temp_client.create_authorization(auth_settings(tfa))
     rescue Octokit::Unauthorized
       cli.say cli.color 'Password Incorrect', :red
-      temp_client.password = cli.pw_ask 'Enter your GitHub password: '
+      temp_client.password = cli.pw_ask 'Reenter your GitHub password: '
       retry
     rescue Octokit::OneTimePasswordRequired
       tfa = cli.pw_ask 'Enter 2FA code: '
