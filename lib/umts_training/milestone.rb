@@ -23,12 +23,9 @@ module UMTSTraining
     # Creates the "Training exit interview" milestone on GitHub. It returns
     # (and memo-izes) the milestone resource for later use in e.g.
     # create_issues!
-    #--
-    # rubocop:disable Naming/MemoizedInstanceVariableName
-    def create!
+    def milestone
       @milestone ||= @client.create_milestone(@repo, 'Training exit interview')
     end
-    # rubocop:enable Naming/MemoizedInstanceVariableName
 
     ##
     # Creates the isses specified in the YAML. Each of them will be
@@ -39,7 +36,7 @@ module UMTSTraining
                              document.fetch('title'),
                              format_body(document['description'],
                                          document['subtasks']),
-                             milestone: @milestone.number
+                             milestone: milestone.number
       end
     end
   end

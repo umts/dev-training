@@ -37,7 +37,6 @@ client.add_collaborators! YAML.safe_load colaborators_file
 cli.message :create_issues
 milestone = UMTSTraining::Milestone.new(local_repo, client, qualifications_file)
 client.enable_issues!
-milestone.create!
 milestone.create_issues!
 
 # Congratulate the user on a job well done.

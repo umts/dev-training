@@ -29,11 +29,11 @@ RSpec.describe UMTSTraining::Milestone do
     UMTSTraining::Milestone.new(repo, uclient, yaml_file)
   end
 
-  describe '#create!' do
+  describe '#milestone' do
     it 'tells the client to create a milestone' do
       expect(client).to receive(:create_milestone)
         .with('judy/harfbang', 'Training exit interview')
-      milestone.create!
+      milestone.milestone
     end
 
     it 'does not re-create a milestone if already initialized' do
@@ -41,8 +41,8 @@ RSpec.describe UMTSTraining::Milestone do
         .with('judy/harfbang', 'Training exit interview')
         .and_return('ANYTHING').once
 
-      first_milestone = milestone.create!
-      second_milestone = milestone.create!
+      first_milestone = milestone.milestone
+      second_milestone = milestone.milestone
       expect(first_milestone).to be(second_milestone)
     end
   end
@@ -57,7 +57,6 @@ RSpec.describe UMTSTraining::Milestone do
 
       allow(client).to receive(:create_milestone)
         .and_return(OpenStruct.new(number: @ms_num))
-      milestone.create!
     end
     it 'creates one issue for each YAML doc' do
       expect(client).to receive(:create_issue).exactly(@document_count).times
