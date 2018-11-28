@@ -54,7 +54,8 @@ module UMTSTraining
     private
 
     def make_auth(temp_client, cli, tfa = nil)
-      temp_client.create_authorization(auth_settings(tfa))
+      remove_old_auth(temp_client, tfa)
+      temp_client.create_authorization(auth_settings.merge(tfa_settings(tfa)))
     rescue Octokit::Unauthorized
       cli.say cli.color 'Password Incorrect', :red
       temp_client.password = cli.pw_ask 'Reenter your GitHub password: '
@@ -64,12 +65,27 @@ module UMTSTraining
       make_auth(temp_client, cli, tfa)
     end
 
-    def auth_settings(tfa = nil)
-      {}.tap do |h|
-        h[:scopes] = %w[user repo]
-        h[:note] = 'UMTS Programmer Training'
-        h[:headers] = { 'X-Github-OTP' => tfa } if tfa
-      end
+    def remove_old_auth(temp_client, tfa = nil)
+      authorization = temp_client.authorizations(tfa_settings(tfa))
+                                 .find { |a| a[:note] == human_name }
+      return unless authorization
+
+      temp_client.delete_authorization(authorization[:id], tfa_settings(tfa))
+    end
+
+    def human_name
+      'UMTS Programmer Training'
+    end
+
+    def auth_settings
+      {
+        scopes: %w[user repo],
+        note: human_name
+      }
+    end
+
+    def tfa_settings(tfa = nil)
+      tfa ? { headers: { 'X-Github-OTP' => tfa } } : {}
     end
   end
 end

@@ -19,4 +19,8 @@ class PasswordClient
       raise Octokit::Unauthorized
     end
   end
+
+  def authorizations(*_args)
+    []
+  end
 end
