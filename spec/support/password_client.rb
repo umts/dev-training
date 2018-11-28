@@ -23,4 +23,8 @@ class PasswordClient
   def authorizations(*_args)
     []
   end
+
+  def delete_authorization(*_args)
+    true
+  end
 end

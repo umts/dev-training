@@ -40,6 +40,12 @@ RSpec.describe UMTSTraining::Client do
     let :tfa_client do
       PasswordClient.new(password: 'TFA')
     end
+    let :existing_auths do
+      [{ note: 'UMTS Programmer Training', id: 42 }]
+    end
+    let :call do
+      described_class.new(local_repo, cli)
+    end
 
     it 'makes a temporary client' do
       expect(cli).to receive(:pw_ask).and_return('PASSWORD')
@@ -49,7 +55,7 @@ RSpec.describe UMTSTraining::Client do
       allow(Octokit::Client).to receive(:new)
         .with(access_token: '*')
 
-      described_class.new(local_repo, cli)
+      call
     end
 
     it 'handles an incorrect password' do
@@ -64,7 +70,7 @@ RSpec.describe UMTSTraining::Client do
       allow(Octokit::Client).to receive(:new)
         .with(access_token: '*')
 
-      described_class.new(local_repo, cli)
+      call
     end
 
     it 'handles a 2FA requirement' do
@@ -76,7 +82,22 @@ RSpec.describe UMTSTraining::Client do
       allow(Octokit::Client).to receive(:new)
         .with(access_token: '*')
 
-      described_class.new(local_repo, cli)
+      call
+    end
+
+    it 'deletes an existing authorization if it exists' do
+      allow(cli).to receive(:pw_ask).and_return('GOOD')
+      allow(Octokit::Client).to receive(:new)
+        .with(login: 'sharon', password: 'GOOD')
+        .and_return(temp_client)
+      expect(temp_client).to receive(:authorizations)
+        .and_return(existing_auths)
+      expect(temp_client).to receive(:delete_authorization)
+        .with(42, anything)
+      allow(Octokit::Client).to receive(:new)
+        .with(access_token: '*')
+
+      call
     end
 
     context 'with a valid client' do
