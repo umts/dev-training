@@ -77,44 +77,97 @@ RSpec.describe UMTSTraining::Milestone do
       allow(client).to receive(:create_milestone)
         .and_return(OpenStruct.new(number: @ms_num))
     end
+    let :call do
+      milestone.create_issues!
+    end
     it 'creates one issue for each YAML doc' do
       expect(client).to receive(:create_issue).exactly(@document_count).times
-      milestone.create_issues!
+      call
     end
     it 'uses the repository name' do
       expect(client).to receive(:create_issue)
         .with('judy/harfbang', any_args).exactly(@document_count).times
-      milestone.create_issues!
+      call
     end
     it 'uses the milestone number' do
       expect(client).to receive(:create_issue)
         .with(anything, anything, anything, hash_including(milestone: @ms_num))
         .exactly(@document_count).times
-      milestone.create_issues!
+      call
     end
     it 'uses the title for an issue' do
       allow(client).to receive(:create_issue)
       expect(client).to receive(:create_issue)
         .with(anything, /TEST-TITLE/, any_args).once
-      milestone.create_issues!
+      call
     end
     it 'includes the description if provided' do
       allow(client).to receive(:create_issue)
       expect(client).to receive(:create_issue)
         .with(anything, anything, /TEST-DESCRIPTION/, anything).once
-      milestone.create_issues!
+      call
     end
     it 'handles a missing description' do
       allow(client).to receive(:create_issue)
       expect(client).to receive(:create_issue)
         .with(anything, anything, nil, anything).once
-      milestone.create_issues!
+      call
     end
     it 'has a tesk list if there are sub-tasks' do
       allow(client).to receive(:create_issue)
       expect(client).to receive(:create_issue)
         .with(anything, anything, /\* \[ \] /, anything).once
-      milestone.create_issues!
+      call
+    end
+  end
+
+  describe '#close_all_issues!' do
+    before :each do
+      @ms_num = 1
+      allow(client).to receive(:milestones).and_return([])
+      allow(client).to receive(:create_milestone)
+        .and_return(OpenStruct.new(number: @ms_num))
+    end
+    let :existing_issues do
+      Array.new(5) { |i| OpenStruct.new(number: i) }
+    end
+    let :call do
+      milestone.close_all_issues!
+    end
+
+    it 'looks for existing issues' do
+      expect(client).to receive(:issues)
+        .with('judy/harfbang', milestone: @ms_num).and_return([])
+      call
+    end
+    it 'comments on all open issues' do
+      allow(client).to receive(:issues).and_return(existing_issues)
+
+      expect(client).to receive(:add_comment)
+        .with(anything, anything, 'Closed: re-bootstrapping').exactly(5).times
+
+      allow(client).to receive(:update_issue)
+      allow(client).to receive(:close_issue)
+      call
+    end
+    it 'removes all open issues from the milestone' do
+      allow(client).to receive(:issues).and_return(existing_issues)
+      allow(client).to receive(:add_comment)
+
+      expect(client).to receive(:update_issue)
+        .with(anything, anything, milestone: nil).exactly(5).times
+
+      allow(client).to receive(:close_issue)
+      call
+    end
+    it 'closes all open issues' do
+      allow(client).to receive(:issues).and_return(existing_issues)
+      allow(client).to receive(:add_comment)
+      allow(client).to receive(:update_issue)
+
+      expect(client).to receive(:close_issue)
+        .with(anything, instance_of(Integer)).exactly(5).times
+      call
     end
   end
 end

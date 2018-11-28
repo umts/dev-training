@@ -47,7 +47,8 @@ module UMTSTraining
     # better to not have duplicate open issues.
     def close_all_issues!
       @client.issues(@repo, milestone: milestone.number).each do |issue|
-        @client.add_comment(@repo, issue.number, 'Closed: re-bootrapping')
+        @client.add_comment(@repo, issue.number, 'Closed: re-bootstrapping')
+        @client.update_issue(@repo, issue.number, milestone: nil)
         @client.close_issue(@repo, issue.number)
       end
     end

@@ -197,7 +197,8 @@ not have duplicate open issues.</p>
             <pre><span class="ruby-comment"># File lib/umts_training/milestone.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">close_all_issues!</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">issues</span>(<span class="ruby-ivar">@repo</span>, <span class="ruby-value">milestone:</span> <span class="ruby-identifier">milestone</span>.<span class="ruby-identifier">number</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">issue</span><span class="ruby-operator">|</span>
-    <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_comment</span>(<span class="ruby-ivar">@repo</span>, <span class="ruby-identifier">issue</span>.<span class="ruby-identifier">number</span>, <span class="ruby-string">&#39;Closed: re-bootrapping&#39;</span>)
+    <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_comment</span>(<span class="ruby-ivar">@repo</span>, <span class="ruby-identifier">issue</span>.<span class="ruby-identifier">number</span>, <span class="ruby-string">&#39;Closed: re-bootstrapping&#39;</span>)
+    <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">update_issue</span>(<span class="ruby-ivar">@repo</span>, <span class="ruby-identifier">issue</span>.<span class="ruby-identifier">number</span>, <span class="ruby-value">milestone:</span> <span class="ruby-keyword">nil</span>)
     <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">close_issue</span>(<span class="ruby-ivar">@repo</span>, <span class="ruby-identifier">issue</span>.<span class="ruby-identifier">number</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
