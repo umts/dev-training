@@ -20,11 +20,12 @@ module UMTSTraining
     end
 
     ##
-    # Creates the "Training exit interview" milestone on GitHub. It returns
-    # (and memo-izes) the milestone resource for later use in e.g.
+    # Finds or creates the "Training exit interview" milestone on GitHub. It
+    # returns (and memo-izes) the milestone resource for later use in e.g.
     # create_issues!
     def milestone
-      @milestone ||= @client.create_milestone(@repo, 'Training exit interview')
+      @milestone ||= @client.milestones(@repo).find { |m| m[:title] == name } ||
+                     @client.create_milestone(@repo, name)
     end
 
     ##
@@ -38,6 +39,23 @@ module UMTSTraining
                                          document['subtasks']),
                              milestone: milestone.number
       end
+    end
+
+    ##
+    # Closes all open issues in the milestone. This will hopefully usually be
+    # a no-op, but in the case where a user is re-bootrapping. It will be
+    # better to not have duplicate open issues.
+    def close_all_issues!
+      @client.issues(@repo, milestone: milestone.number).each do |issue|
+        @client.add_comment(@repo, issue.number, 'Closed: re-bootrapping')
+        @client.close_issue(@repo, issue.number)
+      end
+    end
+
+    private
+
+    def name
+      'Training exit interview'
     end
   end
 end

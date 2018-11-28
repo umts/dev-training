@@ -30,15 +30,33 @@ RSpec.describe UMTSTraining::Milestone do
   end
 
   describe '#milestone' do
+    let :title do
+      'Training exit interview'
+    end
+    let :existing_milestones do
+      [
+        { title: 'Not the right one' },
+        { title: title }
+      ]
+    end
+
     it 'tells the client to create a milestone' do
+      allow(client).to receive(:milestones).and_return([])
       expect(client).to receive(:create_milestone)
-        .with('judy/harfbang', 'Training exit interview')
+        .with('judy/harfbang', title)
       milestone.milestone
     end
 
+    it 'finds an existing milestone if there is one' do
+      expect(client).to receive(:milestones).and_return(existing_milestones)
+      expect(client).not_to receive(:create_milestone)
+      expect(milestone.milestone[:title]).to eq(title)
+    end
+
     it 'does not re-create a milestone if already initialized' do
+      allow(client).to receive(:milestones).and_return([])
       expect(client).to receive(:create_milestone)
-        .with('judy/harfbang', 'Training exit interview')
+        .with('judy/harfbang', title)
         .and_return('ANYTHING').once
 
       first_milestone = milestone.milestone
@@ -55,6 +73,7 @@ RSpec.describe UMTSTraining::Milestone do
       @document_count = YAML.load_stream(yaml_file).count
       yaml_file.rewind
 
+      allow(client).to receive(:milestones).and_return([])
       allow(client).to receive(:create_milestone)
         .and_return(OpenStruct.new(number: @ms_num))
     end
