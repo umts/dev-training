@@ -15,10 +15,10 @@ module UMTSTraining
     attr_reader :client
 
     ##
-    # Makes the authorization(s) required on initialization. `local_repo` is a
-    # UMTSTraining::LocalRepo -- needed for determining the GitHub user and
-    # remote -- and `cli` is a UMTSTraining::CLI -- used for getting passwords
-    # from the user.
+    # Makes the authorization(s) required on initialization. `local_repo`
+    # is a UMTSTraining::LocalRepo -- used for determining the GitHub user
+    # (from the remote) -- and `cli` is a UMTSTraining::CLI -- used for
+    # getting passwords from the user.
     def initialize(local_repo, cli)
       password = cli.pw_ask 'Enter your GitHub pasword: '
       temp_client = Octokit::Client.new(
@@ -28,27 +28,6 @@ module UMTSTraining
 
       @auth = make_auth(temp_client, cli)
       @client = Octokit::Client.new(access_token: auth.token)
-      @repo = local_repo
-    end
-
-    ##
-    # Adds each of the `collaborators` specified (as an `Array` of `String`s)
-    # to the GitHub remote repository.
-    def add_collaborators!(collaborators)
-      collaborators.each do |collaborator|
-        next if collaborator == @repo.user
-
-        @client.add_collaborator(@repo.github_name, collaborator)
-      end
-    end
-
-    ##
-    # Enables issues on the GitHub repository. Issues are disabled on the
-    # private fork of this repository (because they belong in the public
-    # repo), but that means that the trainee's fork also has issues disabled
-    # which is counter to the purpose of this application.
-    def enable_issues!
-      @client.edit_repository(@repo.github_name, has_issues: true)
     end
 
     private

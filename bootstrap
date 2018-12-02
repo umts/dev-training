@@ -13,9 +13,9 @@ require 'umts_training'
 config_dir = Pathname(__dir__).join('config').expand_path
 messages_file = config_dir.join('messages.yml').open
 qualifications_file = config_dir.join('qualifications.yml').open
-colaborators_file = config_dir.join('colaborators.yml').open
+collaborators_file = config_dir.join('collaborators.yml').open
 at_exit do
-  [messages_file, qualifications_file, colaborators_file].each(&:close)
+  [messages_file, qualifications_file, collaborators_file].each(&:close)
 end
 
 # Create a LocalRepo and CLI object for interacting with the user
@@ -30,13 +30,14 @@ client = UMTSTraining::Client.new(local_repo, cli)
 # Add the colaborators in the config file as colaborator's on the user's
 # repository.
 cli.message :add_collabs
-client.add_collaborators! YAML.safe_load colaborators_file
+repo = UMTSTraining::Repository.new(local_repo, client)
+repo.add_collaborators! YAML.safe_load collaborators_file
 
 # Enable issues, create a "graduation" milestone and make the issues from the
 # "qualification" file.
 cli.message :create_issues
 milestone = UMTSTraining::Milestone.new(local_repo, client, qualifications_file)
-client.enable_issues!
+repo.enable_issues!
 milestone.close_all_issues!
 milestone.create_issues!
 

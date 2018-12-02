@@ -2,26 +2,6 @@
 
 require 'ostruct'
 
-RSpec.shared_context 'valid_octokit_client' do
-  let :temp_client do
-    PasswordClient.new
-  end
-  let :real_client do
-    TokenClient.new
-  end
-
-  before(:each) do
-    allow(cli).to receive(:pw_ask).and_return('PASSWORD')
-    allow(Octokit::Client).to receive(:new)
-      .with(login: 'sharon', password: 'PASSWORD')
-      .and_return(temp_client)
-    allow(Octokit::Client).to receive(:new)
-      .with(access_token: '*').and_return(real_client)
-
-    @client = described_class.new(local_repo, cli)
-  end
-end
-
 RSpec.describe UMTSTraining::Client do
   let :cli do
     instance_double(UMTSTraining::CLI)
@@ -102,34 +82,17 @@ RSpec.describe UMTSTraining::Client do
 
     context 'with a valid client' do
       include_context 'valid_octokit_client'
+      let :client do
+        described_class.new(local_repo, cli)
+      end
 
       it 'creates and stores an auth token' do
-        expect(@client.auth.token).to eq '*'
+        expect(client.auth.token).to eq '*'
       end
 
       it 'creates and stores a client' do
-        expect(@client.client).to eq real_client
+        expect(client.client).to eq real_client
       end
-    end
-  end
-
-  describe '#add_collaborators!' do
-    include_context 'valid_octokit_client'
-    it 'adds the correct number of collaborators' do
-      expect(real_client).to receive(:add_collaborator)
-        .with('sharon/dev-training', anything).exactly(4).times
-
-      @client.add_collaborators!(Array.new(4))
-    end
-  end
-
-  describe '#enable_issues!' do
-    include_context 'valid_octokit_client'
-    it 'edits the repository to have issues' do
-      expect(real_client).to receive(:edit_repository)
-        .with('sharon/dev-training', has_issues: true)
-
-      @client.enable_issues!
     end
   end
 end

@@ -8,6 +8,7 @@ require 'umts_training/client'
 require 'umts_training/formatting_helpers'
 require 'umts_training/local_repo'
 require 'umts_training/milestone'
+require 'umts_training/repository'
 
 ##
 # * UMTSTraining::CLI
@@ -16,5 +17,6 @@ require 'umts_training/milestone'
 # * UMTSTraining::LocalRepo
 # * UMTSTraining::MessageCatalog
 # * UMTSTraining::Milestone
+# * UMTSTraining::Repository
 module UMTSTraining
 end
