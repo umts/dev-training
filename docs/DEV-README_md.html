@@ -110,10 +110,23 @@ subtasks:
 
 <h2 id="label-Collaborators">Collaborators<span><a href="#label-Collaborators">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>The list of users that will be added as collaborators is defined in the
-<code>config/colaborators.yml</code> file. It isn&#39;t possible,
-unfortunately, to use the API to get those users, since listing team
-membership isn&#39;t a thing a regular organization member can do.</p>
+<p>The list of users and/or teams that will be added as collaborators is
+defined in the <code>config/colaborators.yml</code> file. It can either be
+just a list of GitHub usernames:</p>
+
+<pre class="ruby"><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span>
+<span class="ruby-operator">-</span> <span class="ruby-identifier">able</span>
+<span class="ruby-operator">-</span> <span class="ruby-identifier">baker</span>
+<span class="ruby-operator">-</span> <span class="ruby-identifier">charlie</span>
+</pre>
+
+<p>or a mapping with a list of teams and a list of users:</p>
+
+<pre>---
+teams:
+  - BestProgrammers
+users:
+  - someOtherProgrammer</pre>
 
 <h2 id="label-Configuring+messages+used+by+bootstrap">Configuring messages used by <code>bootstrap</code><span><a href="#label-Configuring+messages+used+by+bootstrap">&para;</a> <a href="#top">&uarr;</a></span></h2>
 

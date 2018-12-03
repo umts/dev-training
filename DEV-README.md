@@ -27,10 +27,26 @@ subtasks:
 
 Collaborators
 -------------
-The list of users that will be added as collaborators is defined in the
-`config/colaborators.yml` file. It isn't possible, unfortunately, to use the
-API to get those users, since listing team membership isn't a thing a regular
-organization member can do.
+The list of users and/or teams that will be added as collaborators is defined
+in the `config/colaborators.yml` file. It can either be just a list of GitHub
+usernames:
+
+```yaml
+---
+- able
+- baker
+- charlie
+```
+
+or a mapping with a list of teams and a list of users:
+
+```yaml
+---
+teams:
+  - BestProgrammers
+users:
+  - someOtherProgrammer
+```
 
 Configuring messages used by `bootstrap`
 -------------------------------------
