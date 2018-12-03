@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class UMTSTraining::Repository - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add_collaborators-21">#add_collaborators!</a>
+    
+    <li ><a href="#method-i-enable_issues-21">#enable_issues!</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-UMTSTraining::Repository">
+  <h1 id="class-UMTSTraining::Repository" class="class">
+    class UMTSTraining::Repository
+  </h1>
+
+  <section class="description">
+    
+<p>Represents the remote repository and handles the interaction with GitHub
+that isn&#39;t covered by <a
+href="Milestone.html">UMTSTraining::Milestone</a>.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(local_repo, client)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><code>local_repo</code> is a <a
+href="LocalRepo.html">UMTSTraining::LocalRepo</a> – used for getting the
+remote repository name – <code>client</code> is a <a
+href="Client.html">UMTSTraining::Client</a> for interacting with the Github
+API.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">local_repo</span>, <span class="ruby-identifier">client</span>)
+  <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">client</span> <span class="ruby-comment"># ugh</span>
+  <span class="ruby-ivar">@repo</span> = <span class="ruby-identifier">local_repo</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_collaborators-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_collaborators!</span><span
+            class="method-args">(collaborators)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds collaborators to the GitHub remote repository.
+<code>collaborators</code> may either be an array of GitHub user names
+<em>or</em> a hash with a <code>:users</code> (or
+<code>&quot;users&quot;</code>) key – which maps to an array of GitHub user
+names – and a <code>:teams</code> (or <code>&quot;teams&quot;</code>) key –
+# which maps to an array of team names or team ids.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_collaborators-21-source">
+            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_collaborators!</span>(<span class="ruby-identifier">collaborators</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">collaborators</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">add_user_collaborators</span> <span class="ruby-identifier">collaborators</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">c</span> = <span class="ruby-constant">Hashie</span><span class="ruby-operator">::</span><span class="ruby-constant">Mash</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">collaborators</span>
+    [<span class="ruby-identifier">add_user_collaborators</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:users</span>)),
+     <span class="ruby-identifier">add_team_collaborators</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:teams</span>))].<span class="ruby-identifier">all?</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;must be an Array or a Hash&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-enable_issues-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enable_issues!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Enables issues on the GitHub repository. Issues are disabled on the private
+fork of this repository (because they belong in the public repo), but that
+means that the trainee&#39;s fork also has issues disabled which is counter
+to the purpose of this application.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="enable_issues-21-source">
+            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">enable_issues!</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">edit_repository</span>(<span class="ruby-ivar">@repo</span>.<span class="ruby-identifier">github_name</span>, <span class="ruby-value">has_issues:</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

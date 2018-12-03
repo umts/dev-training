@@ -9,11 +9,10 @@ class TokenClient
     @access_token = access_token
   end
 
-  def add_collaborator(*_args)
-    true
-  end
-
-  def edit_repository(*_args)
-    true
-  end
+  %i[add_collaborator edit_repository add_team_repository org_teams]
+    .each do |meth|
+      define_method meth do |*_args|
+        true
+      end
+    end
 end

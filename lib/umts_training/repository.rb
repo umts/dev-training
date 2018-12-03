@@ -3,11 +3,13 @@
 require 'hashie'
 
 module UMTSTraining
+  ##
+  # Represents the remote repository and handles the interaction with GitHub
+  # that isn't covered by UMTSTraining::Milestone.
   class Repository
     ##
-    # Represents the remote repository. `local_repo` is a
-    # UMTSTraining::LocalRepo -- used for getting the remote repository
-    # name -- `client` is a UMTSTraining::Client for interacting with
+    # `local_repo` is a UMTSTraining::LocalRepo -- used for getting the remote
+    # repository name -- `client` is a UMTSTraining::Client for interacting with
     # the Github API.
     def initialize(local_repo, client)
       @client = client.client # ugh
@@ -26,8 +28,8 @@ module UMTSTraining
         add_user_collaborators collaborators
       when Hash
         c = Hashie::Mash.new collaborators
-        add_team_collaborators c.fetch(:teams)
-        add_user_collaborators c.fetch(:users)
+        [add_user_collaborators(c.fetch(:users)),
+         add_team_collaborators(c.fetch(:teams))].all?
       else
         raise ArgumentError, 'must be an Array or a Hash'
       end
@@ -45,15 +47,24 @@ module UMTSTraining
     private
 
     def add_team_collaborators(teams)
-      raise NotImplementedError
+      teams.map do |team|
+        team_id = if team.is_a? Integer
+                    team
+                  else
+                    @client.org_teams('umts').find { |t| t.name == team }&.id
+                  end
+        @client.add_team_repository(team_id,
+                                    @repo.github_name,
+                                    permission: 'push')
+      end.all?
     end
 
     def add_user_collaborators(users)
-      users.each do |user|
+      users.map do |user|
         next if user == @repo.user
 
         @client.add_collaborator(@repo.github_name, user)
-      end
+      end.all?
     end
   end
 end
