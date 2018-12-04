@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require 'pathname'
-unless ENV['CI']
-  require 'simplecov'
-  SimpleCov.start do
-    add_filter '/spec/'
-  end
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+  minimum_coverage 90
+  minimum_coverage_by_file 80
+  maximum_coverage_drop 5
 end
 
 lib_dir = Pathname(__dir__).join('..', 'lib').expand_path
