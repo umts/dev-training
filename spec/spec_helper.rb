@@ -4,6 +4,7 @@ require 'pathname'
 require 'simplecov'
 SimpleCov.start do
   add_filter '/spec/'
+  add_filter '/vendor/'
   minimum_coverage 90
   minimum_coverage_by_file 80
   maximum_coverage_drop 5

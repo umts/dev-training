@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'English'
+require 'etc'
+require 'pathname'
+
+module Bootstrap # :nodoc:
+  class << self
+    # rubocop:disable Metrics/CyclomaticComplexity
+    def go!
+      Dir.chdir(root) do
+        if mac_os?
+          brew_ready? || brew_install || die!
+          system 'brew bootstrap-rbenv-ruby' || die!
+        end
+        gems_ready? || gem_install || die!
+      end
+    end
+    # rubocop:enable Metrics/CyclomaticComplexity
+
+    private
+
+    def brew_ready?
+      `brew bundle check`
+      $CHILD_STATUS.success?
+    end
+
+    def brew_install
+      puts '==> Installing Homebrew dependencies...'
+      system 'brew bundle'
+    end
+
+    def bundle_dir
+      root.join('vendor', 'gems')
+    end
+
+    def die!
+      exit 1
+    end
+
+    def gems_ready?
+      `bundle check --path #{bundle_dir}`
+      $CHILD_STATUS.success?
+    end
+
+    def gem_install
+      system "bundle install --path #{bundle_dir} --quiet --without production"
+    end
+
+    def mac_os?
+      Etc.uname[:sysname] == 'Darwin'
+    end
+
+    def root
+      Pathname.new(__dir__).join('..').expand_path
+    end
+  end
+end
+
+Bootstrap.go!

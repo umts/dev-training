@@ -1,5 +1,5 @@
 *If you're a non-trainee looking for developer or configuration information,
-check out the [DEV-README][dev-readme].*
+check out the* [DEV-README][dev-readme].
 
 ---
 
@@ -24,16 +24,9 @@ $ git clone $(pbpaste) dev-training
 $ cd dev-training
 ```
 
-Next you'll need a few Ruby gems in order to interact with GitHub. We'll use
-Bundler to install them.
-
-```bash
-$ bundle --without development test
-```
-
-Finally, we'll run the bootstrap script that will create your graduation
+Next, we'll run the bootstrap script that will create your graduation
 milestone and add task issues for you to complete. UMTS IT staff will be added
-as "collaborators" on your copy of the repository so we can participate
+as "collaborators" on your copy of the repository so that we can participate
 as well.
 
 ```bash

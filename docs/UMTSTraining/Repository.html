@@ -19,6 +19,7 @@
 
 
 
+
 <body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
@@ -90,9 +91,7 @@
 
   <section class="description">
     
-<p>Represents the remote repository and handles the interaction with GitHub
-that isn&#39;t covered by <a
-href="Milestone.html">UMTSTraining::Milestone</a>.</p>
+<p>Represents the remote repository and handles the interaction with GitHub that isn&#39;t covered by <a href="Milestone.html"><code>UMTSTraining::Milestone</code></a>.</p>
 
   </section>
 
@@ -126,17 +125,13 @@ href="Milestone.html">UMTSTraining::Milestone</a>.</p>
 
         <div class="method-description">
           
-          <p><code>local_repo</code> is a <a
-href="LocalRepo.html">UMTSTraining::LocalRepo</a> – used for getting the
-remote repository name – <code>client</code> is a <a
-href="Client.html">UMTSTraining::Client</a> for interacting with the Github
-API.</p>
+          <p><code>local_repo</code> is a <a href="LocalRepo.html"><code>UMTSTraining::LocalRepo</code></a> – used for getting the remote repository name – <code>client</code> is a <a href="Client.html"><code>UMTSTraining::Client</code></a> for interacting with the Github API.</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">local_repo</span>, <span class="ruby-identifier">client</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">client</span> <span class="ruby-comment"># ugh</span>
   <span class="ruby-ivar">@repo</span> = <span class="ruby-identifier">local_repo</span>
@@ -172,18 +167,13 @@ API.</p>
 
         <div class="method-description">
           
-          <p>Adds collaborators to the GitHub remote repository.
-<code>collaborators</code> may either be an array of GitHub user names
-<em>or</em> a hash with a <code>:users</code> (or
-<code>&quot;users&quot;</code>) key – which maps to an array of GitHub user
-names – and a <code>:teams</code> (or <code>&quot;teams&quot;</code>) key –
-# which maps to an array of team names or team ids.</p>
+          <p>Adds collaborators to the GitHub remote repository. <code>collaborators</code> may either be an array of GitHub user names <em>or</em> a hash with a <code>:users</code> (or <code>&quot;users&quot;</code>) key – which maps to an array of GitHub user names – and a <code>:teams</code> (or <code>&quot;teams&quot;</code>) key – # which maps to an array of team names or team ids.</p>
           
           
 
           
           <div class="method-source-code" id="add_collaborators-21-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 24</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_collaborators!</span>(<span class="ruby-identifier">collaborators</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">collaborators</span>
   <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
@@ -219,16 +209,13 @@ names – and a <code>:teams</code> (or <code>&quot;teams&quot;</code>) key –
 
         <div class="method-description">
           
-          <p>Enables issues on the GitHub repository. Issues are disabled on the private
-fork of this repository (because they belong in the public repo), but that
-means that the trainee&#39;s fork also has issues disabled which is counter
-to the purpose of this application.</p>
+          <p>Enables issues on the GitHub repository. Issues are disabled on the private fork of this repository (because they belong in the public repo), but that means that the trainee&#39;s fork also has issues disabled which is counter to the purpose of this application.</p>
           
           
 
           
           <div class="method-source-code" id="enable_issues-21-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/repository.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">enable_issues!</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">edit_repository</span>(<span class="ruby-ivar">@repo</span>.<span class="ruby-identifier">github_name</span>, <span class="ruby-value">has_issues:</span> <span class="ruby-keyword">true</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -245,12 +232,13 @@ to the purpose of this application.</p>
     </section>
   
   </section>
+
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
