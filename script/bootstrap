@@ -52,7 +52,7 @@ m = Module.new do
   end
 
   def root
-    Pathname.new(__dir__).join('..').expand_path
+    Pathname.new(__FILE__).dirname.join('..').expand_path
   end
 
   def update_ruby
