@@ -1,0 +1,63 @@
+#!/usr/bin/ruby
+# frozen_string_literal: true
+
+require 'English'
+require 'etc'
+require 'pathname'
+
+m = Module.new do
+  module_function
+
+  def go!
+    Dir.chdir(root) do
+      homebrew if mac_os?
+      gems_ok? || gem_install || die!
+    end
+  end
+
+  def brew_ok?
+    `brew bundle check`
+    $CHILD_STATUS.success?
+  end
+
+  def brew_install
+    puts '==> Installing Homebrew dependencies...'
+    system 'brew bundle'
+  end
+
+  def bundle_dir
+    root.join('vendor', 'gems')
+  end
+
+  def die!
+    exit 1
+  end
+
+  def gems_ok?
+    `bundle check --path #{bundle_dir}`
+    $CHILD_STATUS.success?
+  end
+
+  def gem_install
+    system "bundle install --path #{bundle_dir} --quiet --without production"
+  end
+
+  def homebrew
+    brew_ok? || brew_install || die!
+    update_ruby || die!
+  end
+
+  def mac_os?
+    Etc.uname[:sysname] == 'Darwin'
+  end
+
+  def root
+    Pathname.new(__FILE__).dirname.join('..').expand_path
+  end
+
+  def update_ruby
+    system('brew upgrade ruby-build') && system('brew bootstrap-rbenv-ruby')
+  end
+end
+
+m.go!
