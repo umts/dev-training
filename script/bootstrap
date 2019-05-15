@@ -1,61 +1,63 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby
 # frozen_string_literal: true
 
 require 'English'
 require 'etc'
 require 'pathname'
 
-module Bootstrap # :nodoc:
-  class << self
-    # rubocop:disable Metrics/CyclomaticComplexity
-    def go!
-      Dir.chdir(root) do
-        if mac_os?
-          brew_ready? || brew_install || die!
-          system 'brew bootstrap-rbenv-ruby' || die!
-        end
-        gems_ready? || gem_install || die!
-      end
-    end
-    # rubocop:enable Metrics/CyclomaticComplexity
+m = Module.new do
+  module_function
 
-    private
-
-    def brew_ready?
-      `brew bundle check`
-      $CHILD_STATUS.success?
+  def go!
+    Dir.chdir(root) do
+      homebrew if mac_os?
+      gems_ok? || gem_install || die!
     end
+  end
 
-    def brew_install
-      puts '==> Installing Homebrew dependencies...'
-      system 'brew bundle'
-    end
+  def brew_ok?
+    `brew bundle check`
+    $CHILD_STATUS.success?
+  end
 
-    def bundle_dir
-      root.join('vendor', 'gems')
-    end
+  def brew_install
+    puts '==> Installing Homebrew dependencies...'
+    system 'brew bundle'
+  end
 
-    def die!
-      exit 1
-    end
+  def bundle_dir
+    root.join('vendor', 'gems')
+  end
 
-    def gems_ready?
-      `bundle check --path #{bundle_dir}`
-      $CHILD_STATUS.success?
-    end
+  def die!
+    exit 1
+  end
 
-    def gem_install
-      system "bundle install --path #{bundle_dir} --quiet --without production"
-    end
+  def gems_ok?
+    `bundle check --path #{bundle_dir}`
+    $CHILD_STATUS.success?
+  end
 
-    def mac_os?
-      Etc.uname[:sysname] == 'Darwin'
-    end
+  def gem_install
+    system "bundle install --path #{bundle_dir} --quiet --without production"
+  end
 
-    def root
-      Pathname.new(__dir__).join('..').expand_path
-    end
+  def homebrew
+    brew_ok? || brew_install || die!
+    update_ruby || die!
+  end
+
+  def mac_os?
+    Etc.uname[:sysname] == 'Darwin'
+  end
+
+  def root
+    Pathname.new(__dir__).join('..').expand_path
+  end
+
+  def update_ruby
+    system('brew upgrade ruby-build') && system('brew bootstrap-rbenv-ruby')
   end
 end
 
-Bootstrap.go!
+m.go!
