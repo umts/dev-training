@@ -10,15 +10,19 @@ description: >
   the relevant groups in our Github organization.
 subtasks:
 ---
-title: 'Read through employment documents'
+title: 'Read through documents related to university owned computers'
 description: >
-  Some boring--but important--administrative stuff.
+  Since you will be trusted with university-owned computers and potentially
+  sensitive data, you should review these documents
 subtasks:
-  - 'Read'
-  - ''
-  - ''
-  - ''
+  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
+  - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
+  - '[Data Classification]9https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
 ---
+title: 'Read the transportation programmer policies'
+description: >
+  Ask your supervisor to send you this document via email if they have not
+  already done so. It contains policies regarding attendance, remote work, etc.
 title: 'Join Slack'
 description: >
   We use [Slack](https://slack.com/) for communication every day.
