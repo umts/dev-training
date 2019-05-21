@@ -29,3 +29,13 @@ description: >
   You can download the desktop version or use the web version, whichever suits you.
   Ask a supervisor to invite you to our Slack team and add you to the relevant channels.
 ---
+title: 'Complete a Rails Tutorial'
+description: >
+  The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning).
+  If you wish to use an alternate tutorial, talk to your supervisor.
+
+  You can follow the tutorial pretty closely, except for the following caveats-
+
+  For chapter one, there are do not use cloud9 for your development 
+subtasks:
+  - 'Chapter 1: DO NOT use cloud9 for your development environment.'
