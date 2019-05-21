@@ -6,8 +6,7 @@ subtasks:
 ---
 title: 'Join UMTS on Github'
 description: >
-  Ask one of your supervisors or team leaders to get you added to
-  the relevant groups in our Github organization.
+  Make sure you have access to the relevant groups in our Github organization.
 subtasks:
 ---
 title: 'Read through documents related to university owned computers'
@@ -17,15 +16,13 @@ description: >
 subtasks:
   - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
   - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
-  - '[Data Classification]9https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
+  - '[Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
 ---
 title: 'Read the transportation programmer policies'
 description: >
-  Ask your supervisor to send you this document via email if they have not
-  already done so. It contains policies regarding attendance, remote work, etc.
+  This document lives in our [box](https://umass.app.box.com) folder called 'Programmer Training Documents'.
 title: 'Join Slack'
 description: >
-  We use [Slack](https://slack.com/) for communication every day.
-  You can download the desktop version or use the web version, whichever suits you.
-  Ask a supervisor to invite you to our Slack team and add you to the relevant channels.
+  We use [Slack](https://slack.com/) for communication every day. After your invitation to our
+  Slack team, you can download the desktop version or use the web version, whichever suits you.
 ---
