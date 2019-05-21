@@ -1,27 +1,27 @@
 ---
-title: 'Configure your laptop for development'
+title: Configure your laptop for development
 description: >
   go to https://strap.umasstransit.it/ and follow the instructions.
 subtasks:
 ---
-title: 'Join UMTS on Github'
+title: Join UMTS on Github
 description: >
   Make sure you have access to the relevant groups in our Github organization.
 subtasks:
 ---
-title: 'Read through documents related to university owned computers'
+title: Read through documents related to university owned computers
 description: >
   Since you will be trusted with university-owned computers and potentially
   sensitive data, you should review these documents
 subtasks:
-  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
-  - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
-  - '[Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
+  - [Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)
+  - [Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)
+  - [Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)
 ---
-title: 'Read the transportation programmer policies'
+title: Read the transportation programmer policies
 description: >
   This document lives in our [box](https://umass.app.box.com) folder called 'Programmer Training Documents'.
-title: 'Join Slack'
+title: Join Slack
 description: >
   We use [Slack](https://slack.com/) for communication every day. After your invitation to our
   Slack team, you can download the desktop version or use the web version, whichever suits you.
