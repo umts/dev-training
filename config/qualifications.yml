@@ -47,13 +47,63 @@ description: >
   - [Learn enough Ruby to be dangerous](https://www.learnenough.com/ruby-tutorial/hello_world)
   - [Ruby Koans](http://rubykoans.com/)
   rubymonk(maybe), learn enough Ruby to be dangerous, ruby koans
+---
 title: 'Complete a git tutorial (optional)'
 description: >
   If you can push, pull, merge, and resolve conflics with git, you're all set.
   Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
+---
 title: 'Complete a command line tutorial (optional)'
 description: >
   Having a good grasp of the command line is essential for working in our team,
   as we use the command line every single day for various tasks
   Use [this tutorial](https://www.learnenough.com/command-line-tutorial/basics)
   or another approved tutorial to brush up on your basics.
+---
+title: 'Demonstrate understanding of Ruby core methods / Rails object extensions'
+description: >
+  Some methods used in our Rails applications are Ruby methods. Some are
+  written in Rails, like `try` and `1.week`. Close this issue by referencing
+  some work where you have used both (can be two separate projects).
+---
+title: 'Understand the basics of databases and models and their relationship'
+description: >
+  Write a migration and use a model relationship correctly.
+---
+title: 'Understand how to employe ActiveRecord'
+description:
+subtasks:
+  - Use `joins` or `includes`
+  - Use `order` or `sort`
+  - Use `where`, `find`, or `find_by` and explain the differences between these three
+---
+title: 'Have demonstrated familiarity with MVC architecture and the Rails asset pipeline'
+description:
+subtasks:
+  - Demonstrate or explain that you know when to place logic in a controller and model,
+  and what logic does _not_ go in a view.
+  - Use a partial
+  - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
+  - Use params in a controller
+---
+title: 'Demonstrate understanding of correct and proper git usage'
+description: >
+  Show that you understand how to properly use Git by writing commits that
+  generally relate to atomic features or thoughts. Make sure you know how to
+  resolve a merge conflict correctly.
+---
+title: 'Submit a pull request for review'
+description: >
+  Use effective descriptions that provide context of code and rationale for change.
+  Tag some related issues.
+title: 'have given feedback on another programmers code'
+description: >
+  Ask helpful questions/suggest alternatives on someone else's code
+title: 'display a good understanding of how and why to write tests'
+description: >
+  Demonstrate knowledge of basic model/controller/system test structure.
+  Demonstrate understanding of mocks/stubs and what purpose they serve.
+title: 'Display an understanding of front-end development'
+description: >
+  Use CSS to apply styling to pages, and construct some HAML or ERB. Select
+  DOM elements using JQuery.
