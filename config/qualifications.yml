@@ -34,8 +34,26 @@ description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning).
   If you wish to use an alternate tutorial, talk to your supervisor.
 
-  You can follow the tutorial pretty closely, except for the following caveats-
-
-  For chapter one, there are do not use cloud9 for your development 
-subtasks:
-  - 'Chapter 1: DO NOT use cloud9 for your development environment.'
+  You can follow the tutorial pretty closely, except for the following caveats below.
+  - In section 1.2.1, don't follow the instructions for setting up a development environment on cloud9.
+  - In section 1.4.3, the author instructs us to use Bitbucket. We don't use Bitbucket, we use Github.
+  - In section 1.5.1, there are instructions to set up a Heroku account to deploy your code to.
+    Since you'll be deploying code to production in a few short months, you can skip all related steps.
+---
+title: 'Complete a ruby tutorial'
+description: >
+  There are many Ruby tutorials available which you can choose from.
+  Pick one from this list, or if you find one you like better, get approval from your supervisor.
+  - [Learn enough Ruby to be dangerous](https://www.learnenough.com/ruby-tutorial/hello_world)
+  - [Ruby Koans](http://rubykoans.com/)
+  rubymonk(maybe), learn enough Ruby to be dangerous, ruby koans
+title: 'Complete a git tutorial (optional)'
+description: >
+  If you can push, pull, merge, and resolve conflics with git, you're all set.
+  Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
+title: 'Complete a command line tutorial (optional)'
+description: >
+  Having a good grasp of the command line is essential for working in our team,
+  as we use the command line every single day for various tasks
+  Use [this tutorial](https://www.learnenough.com/command-line-tutorial/basics)
+  or another approved tutorial to brush up on your basics.
