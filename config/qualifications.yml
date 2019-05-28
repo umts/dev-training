@@ -47,10 +47,12 @@ description: >
   - [Learn enough Ruby to be dangerous](https://www.learnenough.com/ruby-tutorial/hello_world)
   - [Ruby Koans](http://rubykoans.com/)
   rubymonk(maybe), learn enough Ruby to be dangerous, ruby koans
+---
 title: 'Complete a git tutorial (optional)'
 description: >
   If you can push, pull, merge, and resolve conflics with git, you're all set.
   Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
+---
 title: 'Complete a command line tutorial (optional)'
 description: >
   Having a good grasp of the command line is essential for working in our team,
