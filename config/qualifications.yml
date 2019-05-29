@@ -26,3 +26,9 @@ description: >
   We use [Slack](https://slack.com/) for communication every day. After your invitation to our
   Slack team, you can download the desktop version or use the web version, whichever suits you.
 ---
+title: Choose a text editor
+description: >
+  We don't care what text editor you use. However, we do have some suggestions.
+  Other people in the office have used [atom](https://atom.io/), [sublime](https://www.sublimetext.com/3)...
+  and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
+  so if you'd like a quick introduction, type `vimtutor` in your terminal.
