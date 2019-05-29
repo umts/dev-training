@@ -1,35 +1,39 @@
 ---
-title: 'Configure your laptop for development'
+title: Configure your laptop for development
 description: >
   go to https://strap.umasstransit.it/ and follow the instructions.
 subtasks:
 ---
-title: 'Join UMTS on Github'
+title: Join UMTS on Github
 description: >
-  Ask one of your supervisors or team leaders to get you added to
-  the relevant groups in our Github organization.
+  Make sure you have access to the relevant groups in our Github organization.
 subtasks:
 ---
-title: 'Read through documents related to university owned computers'
+title: Read through documents related to university owned computers
 description: >
   Since you will be trusted with university-owned computers and potentially
   sensitive data, you should review these documents
 subtasks:
-  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
-  - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
-  - '[Data Classification]9https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
+  - [Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)
+  - [Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)
+  - [Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)
 ---
-title: 'Read the transportation programmer policies'
+title: Read the transportation programmer policies
 description: >
-  Ask your supervisor to send you this document via email if they have not
-  already done so. It contains policies regarding attendance, remote work, etc.
-title: 'Join Slack'
+  This document lives in our [box](https://umass.app.box.com) folder called 'Programmer Training Documents'.
+title: Join Slack
 description: >
-  We use [Slack](https://slack.com/) for communication every day.
-  You can download the desktop version or use the web version, whichever suits you.
-  Ask a supervisor to invite you to our Slack team and add you to the relevant channels.
+  We use [Slack](https://slack.com/) for communication every day. After your invitation to our
+  Slack team, you can download the desktop version or use the web version, whichever suits you.
 ---
-title: 'Complete a Rails Tutorial'
+title: Choose a text editor
+description: >
+  We don't care what text editor you use. However, we do have some suggestions.
+  Other people in the office have used [atom](https://atom.io/), [sublime](https://www.sublimetext.com/3)...
+  and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
+  so if you'd like a quick introduction, type `vimtutor` in your terminal.
+---
+title: Complete a Rails Tutorial
 description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning).
   If you wish to use an alternate tutorial, talk to your supervisor.
@@ -40,7 +44,7 @@ description: >
   - In section 1.5.1, there are instructions to set up a Heroku account to deploy your code to.
     Since you'll be deploying code to production in a few short months, you can skip all related steps.
 ---
-title: 'Complete a ruby tutorial'
+title: Complete a ruby tutorial
 description: >
   There are many Ruby tutorials available which you can choose from.
   Pick one from this list, or if you find one you like better, get approval from your supervisor.
@@ -48,36 +52,36 @@ description: >
   - [Ruby Koans](http://rubykoans.com/)
   rubymonk(maybe), learn enough Ruby to be dangerous, ruby koans
 ---
-title: 'Complete a git tutorial (optional)'
+title: Complete a git tutorial (optional)
 description: >
   If you can push, pull, merge, and resolve conflics with git, you're all set.
   Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
 ---
-title: 'Complete a command line tutorial (optional)'
+title: Complete a command line tutorial (optional)
 description: >
   Having a good grasp of the command line is essential for working in our team,
   as we use the command line every single day for various tasks
   Use [this tutorial](https://www.learnenough.com/command-line-tutorial/basics)
   or another approved tutorial to brush up on your basics.
 ---
-title: 'Demonstrate understanding of Ruby core methods / Rails object extensions'
+title: Demonstrate understanding of Ruby core methods / Rails object extensions
 description: >
   Some methods used in our Rails applications are Ruby methods. Some are
   written in Rails, like `try` and `1.week`. Close this issue by referencing
   some work where you have used both (can be two separate projects).
 ---
-title: 'Understand the basics of databases and models and their relationship'
+title: Understand the basics of databases and models and their relationship
 description: >
   Write a migration and use a model relationship correctly.
 ---
-title: 'Understand how to employe ActiveRecord'
+title: Understand how to employe ActiveRecord
 description:
 subtasks:
   - Use `joins` or `includes`
   - Use `order` or `sort`
   - Use `where`, `find`, or `find_by` and explain the differences between these three
 ---
-title: 'Have demonstrated familiarity with MVC architecture and the Rails asset pipeline'
+title: Have demonstrated familiarity with MVC architecture and the Rails asset pipeline
 description:
 subtasks:
   - Demonstrate or explain that you know when to place logic in a controller and model,
@@ -86,24 +90,24 @@ subtasks:
   - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
   - Use params in a controller
 ---
-title: 'Demonstrate understanding of correct and proper git usage'
+title: Demonstrate understanding of correct and proper git usage
 description: >
   Show that you understand how to properly use Git by writing commits that
   generally relate to atomic features or thoughts. Make sure you know how to
   resolve a merge conflict correctly.
 ---
-title: 'Submit a pull request for review'
+title: Submit a pull request for review
 description: >
   Use effective descriptions that provide context of code and rationale for change.
   Tag some related issues.
-title: 'have given feedback on another programmers code'
+title: have given feedback on another programmers code
 description: >
   Ask helpful questions/suggest alternatives on someone else's code
-title: 'display a good understanding of how and why to write tests'
+title: display a good understanding of how and why to write tests
 description: >
   Demonstrate knowledge of basic model/controller/system test structure.
   Demonstrate understanding of mocks/stubs and what purpose they serve.
-title: 'Display an understanding of front-end development'
+title: Display an understanding of front-end development
 description: >
   Use CSS to apply styling to pages, and construct some HAML or ERB. Select
   DOM elements using JQuery.
