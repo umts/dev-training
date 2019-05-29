@@ -1,35 +1,38 @@
 ---
-title: 'Configure your laptop for development'
+title: Configure your laptop for development
 description: >
   go to https://strap.umasstransit.it/ and follow the instructions.
 subtasks:
 ---
-title: 'Join UMTS on Github'
+title: Join UMTS on Github
 description: >
-  Ask one of your supervisors or team leaders to get you added to
-  the relevant groups in our Github organization.
+  Make sure you have access to the relevant groups in our Github organization.
 subtasks:
 ---
-title: 'Read through documents related to university owned computers'
+title: Read through documents related to university owned computers
 description: >
   Since you will be trusted with university-owned computers and potentially
   sensitive data, you should review these documents
 subtasks:
-  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
-  - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
-  - '[Data Classification]9https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
+  - [Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)
+  - [Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)
+  - [Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)
 ---
-title: 'Read the transportation programmer policies'
+title: Read the transportation programmer policies
 description: >
-  Ask your supervisor to send you this document via email if they have not
-  already done so. It contains policies regarding attendance, remote work, etc.
-title: 'Join Slack'
+  This document lives in our [box](https://umass.app.box.com) folder called 'Programmer Training Documents'.
+title: Join Slack
 description: >
-  We use [Slack](https://slack.com/) for communication every day.
-  You can download the desktop version or use the web version, whichever suits you.
-  Ask a supervisor to invite you to our Slack team and add you to the relevant channels.
+  We use [Slack](https://slack.com/) for communication every day. After your invitation to our
+  Slack team, you can download the desktop version or use the web version, whichever suits you.
 ---
-title: 'Complete a Rails Tutorial'
+title: Choose a text editor
+description: >
+  We don't care what text editor you use. However, we do have some suggestions.
+  Other people in the office have used [atom](https://atom.io/), [sublime](https://www.sublimetext.com/3)...
+  and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
+  so if you'd like a quick introduction, type `vimtutor` in your terminal.
+title: Complete a Rails Tutorial
 description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning).
   If you wish to use an alternate tutorial, talk to your supervisor.
@@ -40,7 +43,7 @@ description: >
   - In section 1.5.1, there are instructions to set up a Heroku account to deploy your code to.
     Since you'll be deploying code to production in a few short months, you can skip all related steps.
 ---
-title: 'Complete a ruby tutorial'
+title: Complete a ruby tutorial
 description: >
   There are many Ruby tutorials available which you can choose from.
   Pick one from this list, or if you find one you like better, get approval from your supervisor.
@@ -48,12 +51,12 @@ description: >
   - [Ruby Koans](http://rubykoans.com/)
   rubymonk(maybe), learn enough Ruby to be dangerous, ruby koans
 ---
-title: 'Complete a git tutorial (optional)'
+title: Complete a git tutorial (optional)
 description: >
   If you can push, pull, merge, and resolve conflics with git, you're all set.
   Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
 ---
-title: 'Complete a command line tutorial (optional)'
+title: Complete a command line tutorial (optional)
 description: >
   Having a good grasp of the command line is essential for working in our team,
   as we use the command line every single day for various tasks
