@@ -21,6 +21,7 @@ subtasks:
 title: Read the transportation programmer policies
 description: >
   This document lives in our [box](https://umass.app.box.com) folder called 'Programmer Training Documents'.
+---
 title: Join Slack
 description: >
   We use [Slack](https://slack.com/) for communication every day. After your invitation to our
@@ -74,7 +75,7 @@ title: Understand the basics of databases and models and their relationship
 description: >
   Write a migration and use a model relationship correctly.
 ---
-title: Understand how to employe ActiveRecord
+title: Understand how to employ ActiveRecord
 description:
 subtasks:
   - Use `joins` or `includes`
@@ -100,13 +101,16 @@ title: Submit a pull request for review
 description: >
   Use effective descriptions that provide context of code and rationale for change.
   Tag some related issues.
+---
 title: have given feedback on another programmers code
 description: >
   Ask helpful questions/suggest alternatives on someone else's code
+---
 title: display a good understanding of how and why to write tests
 description: >
   Demonstrate knowledge of basic model/controller/system test structure.
   Demonstrate understanding of mocks/stubs and what purpose they serve.
+---
 title: Display an understanding of front-end development
 description: >
   Use CSS to apply styling to pages, and construct some HAML or ERB. Select
