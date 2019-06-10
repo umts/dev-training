@@ -4,9 +4,10 @@ description: >
   go to https://strap.umasstransit.it/ and follow the instructions.
 subtasks:
 ---
-title: Join UMTS on Github
+title: Ensure you have the correct Github Notifications setup
 description: >
-  Make sure you have access to the relevant groups in our Github organization.
+  Your notification settings for Github can be found [here](https://github.com/settings/notifications).
+  The minimum we require is that you have 'Email' checked under the header 'Participating'.
 subtasks:
 ---
 title: Read through documents related to university owned computers
