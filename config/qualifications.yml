@@ -1,21 +1,35 @@
-# A fully-trained programmer should
 ---
-title: 'Have demonstrated understanding of Ruby core methods / Rails object extensions'
+title: Configure your laptop for development
 description: >
+  go to https://strap.umasstransit.it/ and follow the instructions.
 subtasks:
-  - 'Ruby object types'
-  - 'Methods and functionality brought by Rails (try, 1.week, etc.)'
 ---
-title: 'Have demonstrated familiarity with MVC architecture and the Rails asset pipeline'
+title: Ensure you have the correct Github Notifications setup
 description: >
+  Your notification settings for Github can be found [here](https://github.com/settings/notifications).
+  The minimum we require is that you have 'Email' checked under the header 'Participating'.
 subtasks:
-  - 'When to place logic in controller / model'
-  - 'What not to put in a view'
-  - 'Partials'
-  - 'Working securely with params (guarding at the borders)'
 ---
-title: 'Routing, especially member vs. collection routes'
+title: Read through documents related to university owned computers
 description: >
+  Since you will be trusted with university-owned computers and potentially
+  sensitive data, you should review these documents
 subtasks:
-  - 'Default resource CRUD routes'
-  - 'Difference between GET and POST / links and buttons'
+  - [Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)
+  - [Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)
+  - [Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)
+---
+title: Read the transportation programmer policies
+description: >
+  This document lives in our programmer training [box folder](https://umass.app.box.com/folder/77237337598)
+title: Join Slack
+description: >
+  We use [Slack](https://slack.com/) for communication every day. After your invitation to our
+  Slack team, you can download the desktop version or use the web version, whichever suits you.
+---
+title: Choose a text editor
+description: >
+  We don't care what text editor you use. However, we do have some suggestions.
+  Other people in the office have used [atom](https://atom.io/), [sublime](https://www.sublimetext.com/3)...
+  and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
+  so if you'd like a quick introduction, type `vimtutor` in your terminal.
