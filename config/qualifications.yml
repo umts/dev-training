@@ -34,6 +34,11 @@ description: >
   and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
   so if you'd like a quick introduction, type `vimtutor` in your terminal.
 ---
+title: Complete a git tutorial (optional)
+description: >
+  If you can push, pull, merge, and resolve conflics with git, you're all set.
+  Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
+---
 title: Complete a Rails Tutorial
 description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning).
@@ -51,11 +56,6 @@ description: >
   Pick one from this list, or if you find one you like better, get approval from your supervisor.
   - [Learn enough Ruby to be dangerous](https://www.learnenough.com/ruby-tutorial/hello_world)
   - [Ruby Koans](http://rubykoans.com/)
----
-title: Complete a git tutorial (optional)
-description: >
-  If you can push, pull, merge, and resolve conflics with git, you're all set.
-  Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
 ---
 title: Complete a command line tutorial (optional)
 description: >
