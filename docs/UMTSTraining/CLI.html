@@ -19,6 +19,7 @@
 
 
 
+
 <body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
@@ -90,10 +91,7 @@
 
   <section class="description">
     
-<p>The <code>UMTSTraining::CLI</code> class is for interacting with the user
-via the command-line. It is a subclass of <a
-href="https://www.rubydoc.info/gems/highline/HighLine">Highline</a> with a
-few minor additions.</p>
+<p>The <code>UMTSTraining::CLI</code> class is for interacting with the user via the command-line. It is a subclass of <a href="https://www.rubydoc.info/gems/highline/HighLine">Highline</a> with a few minor additions.</p>
 
   </section>
 
@@ -127,10 +125,7 @@ few minor additions.</p>
 
         <div class="method-description">
           
-          <p>Create a new cli instance. <code>message_file</code> is typically a
-<code>File</code>-ish object that contains the YAML messages that can be
-displayed to the user. It can, however, be anything that <a
-href="MessageCatalog.html#method-c-new">MessageCatalog.new</a> will accept.</p>
+          <p>Create a new cli instance. <code>message_file</code> is typically a <code>File</code>-ish object that contains the YAML messages that can be displayed to the user. It can, however, be anything that <a href="MessageCatalog.html#method-c-new">MessageCatalog.new</a> will accept.</p>
           
           
             <div class="method-calls-super">
@@ -141,7 +136,7 @@ href="MessageCatalog.html#method-c-new">MessageCatalog.new</a> will accept.</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/cli.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/cli.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">messages_file</span>, <span class="ruby-value">input:</span> <span class="ruby-identifier">$stdin</span>, <span class="ruby-value">output:</span> <span class="ruby-identifier">$stdout</span>)
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">output</span>, <span class="ruby-value">80</span>)
   <span class="ruby-ivar">@message_catalog</span> = <span class="ruby-constant">MessageCatalog</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">messages_file</span>)
@@ -177,18 +172,15 @@ href="MessageCatalog.html#method-c-new">MessageCatalog.new</a> will accept.</p>
 
         <div class="method-description">
           
-          <p><code>say</code> the message out of the message catalog with the name,
-<code>name</code>.</p>
+          <p><code>say</code> the message out of the message catalog with the name, <code>name</code>.</p>
 
-<p>Note also that this class delegates methods to said
-<code>MessageCatalog</code>, so <code>CLI#my_message</code> is equivalent
-to <code>CLI#message(:my_message)</code></p>
+<p>Note also that this class delegates methods to said <code>MessageCatalog</code>, so <code>CLI#my_message</code> is equivalent to <code>CLI#message(:my_message)</code></p>
           
           
 
           
           <div class="method-source-code" id="message-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/cli.rb, line 27</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/cli.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">message</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-identifier">say</span> <span class="ruby-ivar">@message_catalog</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">name</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -215,14 +207,13 @@ to <code>CLI#message(:my_message)</code></p>
 
         <div class="method-description">
           
-          <p>Ask for a password. This is a wrapper around HighLine#ask that displays
-<code>*</code>s as you type.</p>
+          <p>Ask for a password. This is a wrapper around HighLine#ask that displays <code>*</code>s as you type.</p>
           
           
 
           
           <div class="method-source-code" id="pw_ask-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/cli.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/cli.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pw_ask</span>(<span class="ruby-identifier">prompt</span>)
   <span class="ruby-identifier">ask</span>(<span class="ruby-identifier">prompt</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-identifier">q</span>.<span class="ruby-identifier">echo</span> = <span class="ruby-string">&#39;*&#39;</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -239,12 +230,13 @@ to <code>CLI#message(:my_message)</code></p>
     </section>
   
   </section>
+
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

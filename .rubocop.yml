@@ -5,6 +5,9 @@ AllCops:
     - bootstrap
     - script/console
     - '**/*.rb'
+  Exclude:
+    - bin/*
+    - vendor/**/*
 
 Metrics/BlockLength:
   Exclude:
