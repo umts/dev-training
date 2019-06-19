@@ -40,12 +40,14 @@ description: >
   Having a good grasp of the command line is essential for working in our team,
   as we use the command line every single day for various tasks
   Use [this tutorial](https://www.learnenough.com/command-line-tutorial/basics)
-  or another approved tutorial to brush up on your basics.
+  or another approved tutorial to brush up on your basics, and link to it in a
+  comment to close this issue.
 ---
-title: Complete a git tutorial (optional)
+title: Complete a git tutorial
 description: >
-  If you can push, pull, merge, and resolve conflics with git, you're all set.
-  Otherwise, consider a tutorial [like this](https://www.learnenough.com/git-tutorial/getting_started)
+  We use Git in combination with Github to work collaboratively on our code.
+  Complete [this](https://www.learnenough.com/git-tutorial/getting_started) or another
+  approved tutorial and link to it in a comment to close this issue.
 ---
 title: Complete a Rails Tutorial
 description: >
@@ -62,6 +64,7 @@ title: Complete a ruby tutorial
 description: >
   There are many Ruby tutorials available which you can choose from.
   Pick one from this list, or if you find one you like better, get approval from your supervisor.
+  When completed, link to it in a comment on this issue to close it.
   - [Learn enough Ruby to be dangerous](https://www.learnenough.com/ruby-tutorial/hello_world)
   - [Ruby Koans](http://rubykoans.com/)
 ---
