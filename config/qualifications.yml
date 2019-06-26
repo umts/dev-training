@@ -15,9 +15,9 @@ description: >
   Since you will be trusted with university-owned computers and potentially
   sensitive data, you should review these documents
 subtasks:
-  - [Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)
-  - [Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)
-  - [Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)
+  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
+  - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
+  - '[Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
 ---
 title: Read the transportation programmer policies
 description: >
@@ -89,7 +89,7 @@ title: Have demonstrated familiarity with MVC architecture and the Rails asset p
 description:
 subtasks:
   - Demonstrate or explain that you know when to place logic in a controller and model,
-  and what logic does _not_ go in a view.
+    and what logic does _not_ go in a view.
   - Use a partial
   - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
   - Use params in a controller
