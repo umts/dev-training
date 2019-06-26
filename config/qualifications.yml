@@ -22,6 +22,7 @@ subtasks:
 title: Read the transportation programmer policies
 description: >
   This document lives in our programmer training [box folder](https://umass.app.box.com/folder/77237337598)
+---
 title: Join Slack
 description: >
   We use [Slack](https://slack.com/) for communication every day. After your invitation to our
@@ -33,3 +34,87 @@ description: >
   Other people in the office have used [atom](https://atom.io/), [sublime](https://www.sublimetext.com/3)...
   and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
   so if you'd like a quick introduction, type `vimtutor` in your terminal.
+---
+title: Complete a command line tutorial
+description: >
+  Having a good grasp of the command line is essential for working in our team,
+  as we use the command line every single day for various tasks
+  Use [this tutorial](https://www.learnenough.com/command-line-tutorial/basics)
+  or another approved tutorial to brush up on your basics, and link to it in a
+  comment to close this issue.
+---
+title: Complete a git tutorial
+description: >
+  We use Git in combination with Github to work collaboratively on our code.
+  Complete [this](https://www.learnenough.com/git-tutorial/getting_started) or another
+  approved tutorial and link to it in a comment to close this issue.
+---
+title: Complete a Rails Tutorial
+description: >
+  The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning).
+  If you wish to use an alternate tutorial, talk to your supervisor.
+
+  You can follow the tutorial pretty closely, except for the following caveats below.
+  - In section 1.2.1, don't follow the instructions for setting up a development environment on cloud9.
+  - In section 1.4.3, the author instructs us to use Bitbucket. We don't use Bitbucket, we use Github.
+  - In section 1.5.1, there are instructions to set up a Heroku account to deploy your code to.
+    Since you'll be deploying code to production in a few short months, you can skip all related steps.
+---
+title: Complete a ruby tutorial
+description: >
+  There are many Ruby tutorials available which you can choose from.
+  Pick one from this list, or if you find one you like better, get approval from your supervisor.
+  When completed, link to it in a comment on this issue to close it.
+  - [Learn enough Ruby to be dangerous](https://www.learnenough.com/ruby-tutorial/hello_world)
+  - [Ruby Koans](http://rubykoans.com/)
+---
+title: Demonstrate understanding of Ruby core methods / Rails object extensions
+description: >
+  Some methods used in our Rails applications are Ruby methods. Some are
+  written in Rails, like `try` and `1.week`. Close this issue by referencing
+  some work where you have used both (can be two separate projects).
+---
+title: Understand the basics of databases and models and their relationship
+description: >
+  Write a migration and use a model relationship correctly.
+---
+title: Understand how to employ ActiveRecord
+description:
+subtasks:
+  - Use `joins` or `includes`
+  - Use `order` or `sort`
+  - Use `where`, `find`, or `find_by` and explain the differences between these three
+---
+title: Have demonstrated familiarity with MVC architecture and the Rails asset pipeline
+description:
+subtasks:
+  - Demonstrate or explain that you know when to place logic in a controller and model,
+  and what logic does _not_ go in a view.
+  - Use a partial
+  - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
+  - Use params in a controller
+---
+title: Demonstrate understanding of correct and proper git usage
+description: >
+  Show that you understand how to properly use Git by writing commits that
+  generally relate to atomic features or thoughts. Make sure you know how to
+  resolve a merge conflict correctly.
+---
+title: Submit a pull request for review
+description: >
+  Use effective descriptions that provide context of code and rationale for change.
+  Tag some related issues.
+---
+title: have given feedback on another programmers code
+description: >
+  Ask helpful questions/suggest alternatives on someone else's code
+---
+title: display a good understanding of how and why to write tests
+description: >
+  Demonstrate knowledge of basic model/controller/system test structure.
+  Demonstrate understanding of mocks/stubs and what purpose they serve.
+---
+title: Display an understanding of front-end development
+description: >
+  Use CSS to apply styling to pages, and construct some HAML or ERB. Select
+  DOM elements using JQuery.
