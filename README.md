@@ -4,7 +4,7 @@ check out the* [DEV-README][dev-readme].
 ---
 
 Hello there. This repository will help us track your progress through our
-training progress.  Here's how to get started:
+training process.  Here's how to get started:
 
 You should be looking at the [private mirror][mirror] of this repository. The
 code in this repository is open-source, but we keep a private copy so that the
