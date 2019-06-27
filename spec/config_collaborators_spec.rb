@@ -17,9 +17,15 @@ RSpec.describe 'config/collaborators.yml' do
     expect([Array, Hash]).to include yaml.class
   end
   it 'has teams if it is a mapping' do
-    expect(yaml.keys).to include 'users' if yaml.is_a? Hash
+    if yaml.is_a? Hash
+      expect(yaml.keys).to include 'users'
+      expect(yaml['teams']).to be_a Array
+    end
   end
   it 'has users if it is a mapping' do
-    expect(yaml.keys).to include 'teams' if yaml.is_a? Hash
+    if yaml.is_a? Hash
+      expect(yaml.keys).to include 'teams'
+      expect(yaml['users']).to be_a Array
+    end
   end
 end
