@@ -79,14 +79,14 @@ description: >
   Write a migration and use a model relationship correctly.
 ---
 title: Understand how to employ ActiveRecord
-description:
+description: https://guides.rubyonrails.org/active_record_querying.html
 subtasks:
   - Use `joins` or `includes`
   - Use `order` or `sort`
   - Use `where`, `find`, or `find_by` and explain the differences between these three
 ---
 title: Have demonstrated familiarity with MVC architecture and the Rails asset pipeline
-description:
+description: Models, Views, Controllers....
 subtasks:
   - Demonstrate or explain that you know when to place logic in a controller and model,
     and what logic does _not_ go in a view.
