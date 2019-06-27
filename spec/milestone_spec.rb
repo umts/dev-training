@@ -113,7 +113,7 @@ RSpec.describe UMTSTraining::Milestone do
         .with(anything, anything, nil, anything).once
       call
     end
-    it 'has a tesk list if there are sub-tasks' do
+    it 'has a task list if there are sub-tasks' do
       allow(client).to receive(:create_issue)
       expect(client).to receive(:create_issue)
         .with(anything, anything, /\* \[ \] /, anything).once
