@@ -56,7 +56,11 @@ m = Module.new do
   end
 
   def update_ruby
-    system('brew upgrade ruby-build') && system('brew bootstrap-rbenv-ruby')
+    success = true
+    if `brew outdated` =~ /^ruby-build$/
+      success = system('brew upgrade ruby-build')
+    end
+    success && system('brew bootstrap-rbenv-ruby')
   end
 end
 
