@@ -2,13 +2,11 @@
 title: Configure your laptop for development
 description: >
   go to https://strap.umasstransit.it/ and follow the instructions.
-subtasks:
 ---
 title: Ensure you have the correct Github Notifications setup
 description: >
   Your notification settings for Github can be found [here](https://github.com/settings/notifications).
   The minimum we require is that you have 'Email' checked under the header 'Participating'.
-subtasks:
 ---
 title: Read through documents related to university owned computers
 description: >
@@ -86,7 +84,6 @@ subtasks:
   - Use `where`, `find`, or `find_by` and explain the differences between these three
 ---
 title: Have demonstrated familiarity with MVC architecture and the Rails asset pipeline
-description: Models, Views, Controllers....
 subtasks:
   - Demonstrate or explain that you know when to place logic in a controller and model,
     and what logic does _not_ go in a view.

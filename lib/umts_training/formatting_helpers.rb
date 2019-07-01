@@ -11,10 +11,9 @@ module UMTSTraining
     # Returns `desc`, and optionally if `subtasks` is a non-empty `Array`, the
     # results of format_checklist tacked on after a blank line.
     def format_body(desc, subtasks = [])
-      unless subtasks.nil? || subtasks.empty?
-        desc += "\n\n" + format_checklist(subtasks)
-      end
-      desc
+      return desc if subtasks.nil? || subtasks.empty?
+
+      [desc, format_checklist(subtasks)].compact.join "\n\n"
     end
 
     ##

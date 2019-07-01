@@ -124,10 +124,9 @@
           <div class="method-source-code" id="format_body-source">
             <pre><span class="ruby-comment"># File lib/umts_training/formatting_helpers.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_body</span>(<span class="ruby-identifier">desc</span>, <span class="ruby-identifier">subtasks</span> = [])
-  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">subtasks</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">subtasks</span>.<span class="ruby-identifier">empty?</span>
-    <span class="ruby-identifier">desc</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;\n\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">format_checklist</span>(<span class="ruby-identifier">subtasks</span>)
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">desc</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">desc</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">subtasks</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">subtasks</span>.<span class="ruby-identifier">empty?</span>
+
+  [<span class="ruby-identifier">desc</span>, <span class="ruby-identifier">format_checklist</span>(<span class="ruby-identifier">subtasks</span>)].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">&quot;\n\n&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -158,7 +157,7 @@
 
           
           <div class="method-source-code" id="format_checklist-source">
-            <pre><span class="ruby-comment"># File lib/umts_training/formatting_helpers.rb, line 22</span>
+            <pre><span class="ruby-comment"># File lib/umts_training/formatting_helpers.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format_checklist</span>(<span class="ruby-identifier">checklist</span>)
   <span class="ruby-identifier">checklist</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
     <span class="ruby-node">&quot;* [ ] #{item}&quot;</span>
