@@ -23,9 +23,10 @@ description: >
 ---
 title: Join Teams
 description: >
-  We use [Microsoft Teams](https://www.umass.edu/it/disruptionresilience/communication-collaboration#Communicate%20with%20Teams%20&%20Peers)
-  for communication every day. We will invite you to our team, after which you can
-  download the desktop version or use the web version, whichever suits you.
+  We use [Microsoft Teams](https://aka.ms/mstfw) for communication every day.
+  We will make a new account for you for work which will be your UMass username-AF
+  and add that account to our team. For example, if you log in to spire as jsmith@umass.edu, your new account name
+  will be jsmith-AF. You should log into teams with this account.
 ---
 title: Choose a text editor
 description: >
