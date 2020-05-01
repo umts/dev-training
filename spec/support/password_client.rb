@@ -10,16 +10,13 @@ class PasswordClient
   end
 
   def create_authorization(params = {})
+    raise Octokit::Unauthorized if @password != 'GOOD' && @password != 'TFA'
+    if @password == 'TFA' && !params.dig(:headers, 'X-Github-OTP')
+      raise Octokit::OneTimePasswordRequired
+    end
     raise Octokit::UnprocessableEntity if params[:note].nil?
 
-    if @password == 'GOOD' ||
-       @password == 'TFA' && params.dig(:headers, 'X-Github-OTP')
-      OpenStruct.new(token: '*')
-    elsif @password == 'TFA'
-      raise Octokit::OneTimePasswordRequired
-    else
-      raise Octokit::Unauthorized
-    end
+    OpenStruct.new(token: '*')
   end
 
   def authorizations(*_args)
