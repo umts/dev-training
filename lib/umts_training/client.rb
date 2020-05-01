@@ -57,7 +57,7 @@ module UMTSTraining
     # Dummy POST to `/authorizations` to trigger SMS if applicable
     def prompt_for_tfa(temp_client)
       temp_client.create_authorization
-    rescue Octokit::UnprocessableEntity
+    rescue Octokit::UnprocessableEntity, Octokit::OneTimePasswordRequired
     end
     # rubocop:enable Lint/HandleExceptions
 
