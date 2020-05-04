@@ -49,7 +49,7 @@ description: >
 ---
 title: Complete a Rails Tutorial
 description: >
-  The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://www.railstutorial.org/book/beginning).
+  The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://learning.oreilly.com/library/view/ruby-on-rails/9780136702726/).
   If you wish to use an alternate tutorial, talk to your supervisor.
 
   You can follow the tutorial pretty closely, except for the following caveats below.
