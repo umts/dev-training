@@ -9,10 +9,25 @@ AllCops:
     - bin/*
     - vendor/**/*
 
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
 
+Style/ExponentialNotation:
+  Enabled: true
 Style/GlobalVars:
   Exclude:
     - script/console
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
