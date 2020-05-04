@@ -53,10 +53,11 @@ description: >
   If you wish to use an alternate tutorial, talk to your supervisor.
 
   You can follow the tutorial pretty closely, except for the following caveats below.
-  - In section 1.2.1, don't follow the instructions for setting up a development environment on cloud9.
-  - In section 1.4.3, the author instructs us to use Bitbucket. We don't use Bitbucket, we use Github.
-  - In section 1.5.1, there are instructions to set up a Heroku account to deploy your code to.
-    Since you'll be deploying code to production in a few short months, you can skip all related steps.
+  - In section 1.1.1 "Development environment", don't set up cloud9.
+    Your laptop has been set up with a development environment.
+  - In section 1.4.1 "Heroku setup and Deployment", there are instructions to set up a Heroku account to deploy your code to.
+    Since you'll be deploying code to production in a few short months, you can skip setting up a heroku account
+    and all related steps.
 ---
 title: Complete a ruby tutorial
 description: >
