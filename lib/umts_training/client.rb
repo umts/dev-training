@@ -53,13 +53,13 @@ module UMTSTraining
       temp_client.delete_authorization(authorization[:id], tfa_settings(tfa))
     end
 
-    # rubocop:disable Lint/HandleExceptions
+    # rubocop:disable Lint/SuppressedException
     # Dummy POST to `/authorizations` to trigger SMS if applicable
     def prompt_for_tfa(temp_client)
       temp_client.create_authorization
     rescue Octokit::UnprocessableEntity, Octokit::OneTimePasswordRequired
     end
-    # rubocop:enable Lint/HandleExceptions
+    # rubocop:enable Lint/SuppressedException
 
     def human_name
       'UMTS Programmer Training'
