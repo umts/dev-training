@@ -10,7 +10,7 @@ class PasswordClient
   end
 
   def create_authorization(params = {})
-    raise Octokit::Unauthorized if @password != 'GOOD' && @password != 'TFA'
+    raise Octokit::Unauthorized unless %w[GOOD TFA].include? @password
     if @password == 'TFA' && !params.dig(:headers, 'X-Github-OTP')
       raise Octokit::OneTimePasswordRequired
     end
