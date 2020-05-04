@@ -44,13 +44,14 @@ description: >
 title: Complete a git tutorial
 description: >
   We use Git in combination with Github to work collaboratively on our code.
-  Complete [this](https://learning.oreilly.com/videos/essential-git/200000006A0403)
+  Log in to O'Reilly's learning tools for free with your UMass account and
+  complete [this](https://learning.oreilly.com/videos/essential-git/200000006A0403)
   or another approved tutorial and link to it in a comment to close this issue.
 ---
 title: Complete a Rails Tutorial
 description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://learning.oreilly.com/library/view/ruby-on-rails/9780136702726/).
-  If you wish to use an alternate tutorial, talk to your supervisor.
+  Log in for free using your UMass account to O'Reilly or, if you wish to use an alternate tutorial, talk to your supervisor.
 
   You can follow the tutorial pretty closely, except for the following caveats below.
   - In section 1.1.1 "Development environment", don't set up cloud9.
@@ -61,9 +62,9 @@ description: >
 ---
 title: Complete a ruby tutorial
 description: >
-  There are many Ruby tutorials available which you can choose from.
-  [This](https://learning.oreilly.com/videos/ruby-fundamentals/300000006A0154)
-  is a good tutorial, or you can download the [Ruby Koans](http://rubykoans.com/). If neither of those.
+  There are many Ruby tutorials available which you can choose from. Log in for
+  free using your UMass account and watch [these videos](https://learning.oreilly.com/videos/ruby-fundamentals/300000006A0154),
+  or you can download the [Ruby Koans](http://rubykoans.com/). If neither of those.
   options appeal to you you may choose another tutorial with your supervisor's approval.
 ---
 title: Demonstrate understanding of Ruby core methods / Rails object extensions
