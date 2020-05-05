@@ -12,7 +12,7 @@ subtasks:
   - Your notification settings for GitHub can be found [here](https://github.com/settings/notifications).
     The minimum we require is that you have 'Email' checked under the header 'Participating'.
   - You should clone repositories using the SSH URL from now on. Please follow the instructions
-    for [connecting to Github using SSH.](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+    for [connecting to GitHub using SSH](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
 ---
 title: Read through documents related to university owned computers
 description: >
