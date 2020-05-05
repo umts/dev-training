@@ -5,7 +5,7 @@ description: >
 ---
 title: Set up Github
 description: >
-  [Login or sign up to Github.](https://github.com/)
+  [Login to or sign up for GitHub.](https://github.com/)
 subtasks:
   - Set up two-factor authentication. We deal with some sensitive data.
   - Tell us your username so we can add you to our organization.
