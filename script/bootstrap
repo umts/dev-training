@@ -34,12 +34,13 @@ m = Module.new do
   end
 
   def gems_ok?
-    `bundle check --path #{bundle_dir}`
+    `bundle check`
     $CHILD_STATUS.success?
   end
 
   def gem_install
-    system "bundle install --path #{bundle_dir} --quiet --without production"
+    system "bundle config set --local path '#{bundle_dir}'"
+    system 'bundle install --quiet --without production'
   end
 
   def homebrew
