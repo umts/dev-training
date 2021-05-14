@@ -16,8 +16,6 @@ group :test do
 end
 
 group :development do
-  gem 'fancy_irb'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'wirb'
 end
