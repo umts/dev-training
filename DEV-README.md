@@ -1,4 +1,11 @@
-[![Build Status][travis-badge]][travis]
+Archived
+--------
+Due to changes in GitHub's auth APIs (see
+https://github.com/umts/dev-training/issues/35), we elected to make a small
+web-based application to replace the CLI method used in this project. That
+project can be found at:
+
+https://github.com/umts/dev-training-web
 
 ---
 
